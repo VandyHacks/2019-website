@@ -5,6 +5,8 @@ import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
 
+import FAQ from '../../content/faq.json';
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -14,6 +16,12 @@ const IndexPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
+
+    <ul>
+      {Object.entries(FAQ).map(qa => {
+        return qa;
+      })}
+    </ul>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 );
