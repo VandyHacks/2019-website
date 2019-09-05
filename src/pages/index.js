@@ -9,7 +9,7 @@ import FAQ from '../../content/faq.json';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -19,7 +19,11 @@ const IndexPage = () => (
 
     <ul>
       {Object.entries(FAQ).map(qa => {
-        return qa;
+        return (
+          <li>
+            {qa[0]} {qa[1]}
+          </li>
+        );
       })}
     </ul>
     <Link to="/page-2/">Go to page 2</Link>
