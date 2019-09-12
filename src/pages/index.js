@@ -1,33 +1,30 @@
 import React from 'react';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 
-import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
 
-import FAQ from '../../content/faq.json';
+import Welcome from '../components/welcome';
+import FAQ from '../components/faq';
+import Schedule from '../components/schedule';
+import SponsorBox from '../components/sponsorBox';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+	<div>
+		<SEO title="" />
+		{
+			// insert VH logo
+		}
+		<h1>VandyHacks VI</h1>
+		<h3>Nov 1-3, 2019 • Nashville, TN </h3>
 
-    <ul>
-      {Object.entries(FAQ).map(qa => {
-        return (
-          <li>
-            {qa[0]} {qa[1]}
-          </li>
-        );
-      })}
-    </ul>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+		<Welcome></Welcome>
+
+		<FAQ></FAQ>
+
+		<Schedule></Schedule>
+
+		<SponsorBox></SponsorBox>
+	</div>
 );
 
 export default IndexPage;
