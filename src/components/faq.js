@@ -2,6 +2,17 @@ import React from 'react';
 
 import FAQItem from './faqItem';
 
+import styled from 'styled-components';
+
+const StyledDiv = styled.div`
+	margin: 3rem auto;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: right;
+	justify-content: center;
+`;
+
 const FAQText = [
 	{
 		question: 'What is a hackathon?',
@@ -95,14 +106,15 @@ const FAQText = [
 		answer: "Send us an email at info@vandyhacks.org! We'll be happy to answer!",
 	},
 ];
+
 const FAQ = () => {
 	return (
-		<div>
+		<StyledDiv>
 			<h2>FAQ</h2>
 			{FAQText.map((el, idx) => (
 				<FAQItem key={idx} {...el}></FAQItem>
 			))}
-		</div>
+		</StyledDiv>
 	);
 };
 
