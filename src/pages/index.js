@@ -27,6 +27,7 @@ const LogoStyle = styled.div`
 	opacity: 0.7;
 `;
 
+// TODO white fill and animation later!
 const LogoText = styled.div`
 	fill: black;
 	fill-opacity: 1;
