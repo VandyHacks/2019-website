@@ -6,7 +6,10 @@
   "contributors": [
     "Matt Leon <matthew.leon@vanderbilt.edu> (https://mattleon.com)",
     "Benjamin Cooper <bencooper222@gmail.com> (https://benc.io)",
-    "Kwuang Tang <chuang.k.tang@vanderbilt.edu> (https://github.com/cktang88)"
+    "Kwuang Tang <chuang.k.tang@vanderbilt.edu> (https://github.com/cktang88)",
+    "Gabriel Ting <gabrielfting@gmail.com> (https://gabrielting.com)",
+    "Anna Zhang <z.annaw19@gmail.com> (https://github.com/zannaw)",
+    "Xue Zou <xue.zzou@gmail.com> (https://github.com/xuezzou)"
   ],
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.6",
