@@ -8,26 +8,47 @@ import Welcome from '../components/welcome';
 import FAQ from '../components/faq';
 import Schedule from '../components/schedule';
 import SponsorBox from '../components/sponsorBox';
-import Try from '../images/bigLogo.svg';
+
+import BigLogo from '../images/bigLogo.svg';
+import Grid from '../images/gridLogo.svg';
 
 const Container = styled.div`
-	width: 50%;
-    text-align: center;
-    margin: 3em auto';
+	width: 77%;
+	text-align: center;
+	margin: 10em auto;
+`;
+
+const LogoStyle = styled.div`
+	position: absolute;
+	top: 7em;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+`;
+
+const LogoText = styled.div`
+	fill: black;
+	fill-opacity: 1;
 `;
 
 const IndexPage = () => (
-	<div>
-		<Container>
-			<Try />
-		</Container>
+	<Container>
+		<LogoText>
+			<BigLogo style={{ fill: 'black' }} />
+		</LogoText>
+		<LogoStyle>
+			<Grid />
+		</LogoStyle>
+
 		<SEO title="" />
 		{
 			// insert VH logo
 		}
-		<h1>VandyHacks VI</h1>
-		<h3>Nov 1-3, 2019 • Nashville, TN </h3>
-
+		<Container>
+			<h1>VandyHacks VI</h1>
+			<h3>Nov 1-3, 2019 • Nashville, TN </h3>
+		</Container>
 		<Welcome></Welcome>
 
 		<FAQ></FAQ>
@@ -35,7 +56,7 @@ const IndexPage = () => (
 		<Schedule></Schedule>
 
 		<SponsorBox></SponsorBox>
-	</div>
+	</Container>
 );
 
 export default IndexPage;
