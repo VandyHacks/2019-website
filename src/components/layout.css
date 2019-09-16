@@ -5,6 +5,7 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 body {
+	height: 100%;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -201,7 +202,7 @@ html {
 }
 body {
 	color: hsla(0, 0%, 0%, 0.8);
-	font-family: georgia, serif;
+	font-family: 'Cabin', serif;
 	font-weight: normal;
 	word-wrap: break-word;
 	font-kerning: normal;
@@ -621,3 +622,6 @@ pre tt:after {
 		font-size: 100%;
 	}
 }
+.vis-hidden {
+	visibility: hidden;
+  }

@@ -1,78 +1,111 @@
 import React from 'react';
 // import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
-import '../components/layout.css';
 
+import InViewMonitor from 'react-inview-monitor';
+import MtSvgLines from 'react-mt-svg-lines';
+import '../../node_modules/animate.css/animate.min.css';
+
+import '../components/layout.css';
 
 import Welcome from '../components/welcome';
 import FAQ from '../components/faq';
 import Schedule from '../components/schedule';
 import SponsorBox from '../components/sponsorBox';
 
-import BigLogo from '../images/bigLogo.svg';
+import LogoOnly from '../images/logoOnly.svg';
+import LogoVandyHacksText from '../images/textVandyHacks.svg';
 import Grid from '../images/gridLogo.svg';
 import LocationDateText from '../images/LocationDateText.svg';
 
-const GlobalStyles = createGlobalStyle`
-  body {
-    @import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
-    font-family: 'Notable', sans-serif;
-  }`;
+window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 
 const Container = styled.div`
-	width: 66%;
+	width: 76%;
 	text-align: center;
 	margin: 10em auto;
 `;
 
 const LogoStyle = styled.div`
 	position: absolute;
-	top: 15em;
-	left: 19em;
+	top: 14em;
+	left: 25em;
 	width: 60%;
-	height: 100%;
-	opacity: 0.7;
+	opacity: 1;
 `;
 
 // TODO white fill and animation later!
-const LogoText = styled.div`
+const LogoOnlyStyle = styled.div`
 	display: inline-block;
-	width: 70%;
-	align-content: center;
+	width: 30%;
+	justify-content: center;
 	fill: black;
 	fill-opacity: 1;
 `;
 
-const LocationDateTextStyle = styled.div`
-	width: 70%;
-	margin: 1em auto;
+const LogoVandyHacksTextStyle = styled.div`
+	width: 30em;
+	margin: 1.5em auto 0.3em auto;
 `;
+
+const LocationDateTextStyle = styled.div`
+	width: 20em;
+	margin: 0.6em auto;
+`;
+
+const ScrollAnimateInLineSvg = ({ SvgElement }) => (
+	<InViewMonitor
+		classNameNotInView="vis-hidden"
+		classNameInView=""
+		childPropsInView={{ animate: true }}
+	>
+		<MtSvgLines duration={2500} fade>
+			{SvgElement}
+		</MtSvgLines>
+	</InViewMonitor>
+);
+
+const BigLogoWithGrid = () => (
+	<Container>
+		<LogoOnlyStyle>
+			<LogoOnly />
+		</LogoOnlyStyle>
+
+		<LogoVandyHacksTextStyle>
+			<LogoVandyHacksText />
+		</LogoVandyHacksTextStyle>
+
+		<LocationDateTextStyle>
+			<LocationDateText />
+		</LocationDateTextStyle>
+
+		<LogoStyle>
+			<Grid />
+		</LogoStyle>
+	</Container>
+);
 
 const IndexPage = () => (
 	<Container>
-		<GlobalStyles />
-			<LogoText>
-				<BigLogo/>
+		<ScrollAnimateInLineSvg SvgElement={<BigLogoWithGrid />} />
 
-				<LocationDateTextStyle>
-				<LocationDateText />
-			</LocationDateTextStyle>
-			</LogoText>
-
-			<LogoStyle>
-				<Grid />
-			</LogoStyle>
-
-			
-
+		<InViewMonitor
+			classNameNotInView="vis-hidden"
+			classNameInView="animated fadeInUp" // fadeInLeft, or fadeInRight
+		>
 			<Welcome></Welcome>
+		</InViewMonitor>
 
+		<InViewMonitor
+			classNameNotInView="vis-hidden"
+			classNameInView="animated fadeInLeft" // fadeInLeft, or fadeInRight
+		>
 			<FAQ></FAQ>
+		</InViewMonitor>
 
-			<Schedule></Schedule>
+		<Schedule></Schedule>
 
-			<SponsorBox></SponsorBox>
+		<SponsorBox></SponsorBox>
 	</Container>
 );
 

@@ -12,6 +12,7 @@
     "Xue Zou <xue.zzou@gmail.com> (https://github.com/xuezzou)"
   ],
   "dependencies": {
+    "animate.css": "^3.7.2",
     "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.15.7",
     "gatsby-image": "^2.2.17",
@@ -27,6 +28,8 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-inview-monitor": "^2.2.1",
+    "react-mt-svg-lines": "^0.9.1",
     "styled-components": "^4.3.2",
     "styled-reset": "^4.0.0"
   },
