@@ -1,7 +1,13 @@
 import React from 'react';
 // import { Link } from 'gatsby';
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { createGlobalStyle } from 'styled-components';
+=======
+import '../components/layout.css';
+
+import SEO from '../components/seo';
+>>>>>>> 6457a0d1f7b7a91288b3424a208cb06c45ef3e90
 
 import Welcome from '../components/welcome';
 import FAQ from '../components/faq';
