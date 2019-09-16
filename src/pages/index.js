@@ -1,8 +1,7 @@
 import React from 'react';
 // import { Link } from 'gatsby';
 import styled from 'styled-components';
-
-import SEO from '../components/seo';
+import { createGlobalStyle } from 'styled-components';
 
 import Welcome from '../components/welcome';
 import FAQ from '../components/faq';
@@ -11,52 +10,68 @@ import SponsorBox from '../components/sponsorBox';
 
 import BigLogo from '../images/bigLogo.svg';
 import Grid from '../images/gridLogo.svg';
+import LocationDateText from '../images/LocationDateText.svg';
+
+const GlobalStyles = createGlobalStyle`
+  body {
+    @import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+    font-family: 'Notable', sans-serif;
+  }`;
 
 const Container = styled.div`
-	width: 77%;
+	width: 66%;
 	text-align: center;
 	margin: 10em auto;
 `;
 
 const LogoStyle = styled.div`
 	position: absolute;
-	top: 7em;
-	left: 0;
-	width: 100%;
+	top: 15em;
+	left: 19em;
+	width: 60%;
 	height: 100%;
 	opacity: 0.7;
 `;
 
 // TODO white fill and animation later!
 const LogoText = styled.div`
+	display: inline-block;
+	width: 70%;
+	align-content: center;
 	fill: black;
 	fill-opacity: 1;
+	opcaity: 0;
+`;
+
+const LocationDateTextStyle = styled.div`
+	width: 70%;
+	margin: 1em auto;
 `;
 
 const IndexPage = () => (
 	<Container>
-		<LogoText>
-			<BigLogo style={{ fill: 'black' }} />
-		</LogoText>
-		<LogoStyle>
-			<Grid />
-		</LogoStyle>
+		<GlobalStyles />
+			<LogoText>
+				<BigLogo/>
 
-		<SEO title="" />
-		{
-			// insert VH logo
-		}
-		<Container>
-			<h1>VandyHacks VI</h1>
-			<h3>Nov 1-3, 2019 • Nashville, TN </h3>
-		</Container>
-		<Welcome></Welcome>
+				<LocationDateTextStyle>
+				<LocationDateText />
+			</LocationDateTextStyle>
+			</LogoText>
 
-		<FAQ></FAQ>
+			<LogoStyle>
+				<Grid />
+			</LogoStyle>
 
-		<Schedule></Schedule>
+			
 
-		<SponsorBox></SponsorBox>
+			<Welcome></Welcome>
+
+			<FAQ></FAQ>
+
+			<Schedule></Schedule>
+
+			<SponsorBox></SponsorBox>
 	</Container>
 );
 
