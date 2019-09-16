@@ -1,8 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import InViewMonitor from 'react-inview-monitor';
 
 import FAQItem from './faqItem';
 
-import styled from 'styled-components';
 
 const StyledDiv = styled.div`
 	margin: 3rem auto;
@@ -118,4 +120,13 @@ const FAQ = () => {
 	);
 };
 
-export default FAQ;
+const FAQAnimated = () => (
+	<InViewMonitor
+		classNameNotInView="vis-hidden"
+		classNameInView="animated fadeInLeft" // fadeInLeft, or fadeInRight
+	>
+		<FAQ />
+	</InViewMonitor>
+);
+
+export default FAQAnimated;
