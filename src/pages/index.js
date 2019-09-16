@@ -18,8 +18,6 @@ import LogoVandyHacksText from '../images/textVandyHacks.svg';
 import Grid from '../images/gridLogo.svg';
 import LocationDateText from '../images/LocationDateText.svg';
 
-window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-
 const Container = styled.div`
 	width: 76%;
 	text-align: center;
