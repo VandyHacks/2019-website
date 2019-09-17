@@ -43,24 +43,24 @@ const WelcomeBoxStyle = styled.div`
 const EraserStyle = styled.div`
 	position: absolute;
 	top: 21em;
-	left: 52em;
-	width: 5em;
+	left: 84%;
+	width: 6em;
 	opacity: 1;
 `;
 
 const Pen2Style = styled.div`
 	position: absolute;
 	top: 7em;
-	left: 42em;
-	width: 3.5em;
+	left: 65%;
+	width: 4.5em;
 	opacity: 1;
 `;
 
 const Pen3Style = styled.div`
 	position: absolute;
 	top: -2em;
-	left: 50em;
-	width: 6.5em;
+	left: 78%;
+	width: 7.5em;
 	opacity: 1;
 `;
 

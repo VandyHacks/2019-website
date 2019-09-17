@@ -74,13 +74,31 @@ const ScheduleBodyTimeCol = styled(ScheduleBodyContainer)`
 `;
 
 const ScheduleBodyDescriptionCol = styled(ScheduleBodyContainer)`
-	width: 58%;
+	width: 50%;
 	float: left;
+`;
+
+const ScheduleBarCol = styled(ScheduleBodyContainer)`
+	width: 3%;
+	float: left;
+	top: 3em;
+	position: relative;
+	margin-left: 1em;
+`;
+
+const ScheduleBarStyle = styled.div`
+	width: 0.5em;
+`;
+
+const ScheduleBarHiddenStyle = styled(ScheduleBarStyle)`
+	opacity: 0;
 `;
 
 const DayText = styled.h2`
 	text-align: right;
 	font-weight: normal;
+	cursor: pointer;
+	color: #3048a1;
 `;
 
 const TimeText = styled.p`
@@ -111,24 +129,46 @@ const scheduleData = [
 		date: 'Nov2',
 		day: 'Sat',
 		schedule: [
-			{ time: '5:30p', event: 'check-in' },
-			{ time: '5:30p', event: 'check-in' },
-			{ time: '5:30p', event: 'check-in' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Eat' },
+			{ time: '5:30p', event: 'Drink' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Eat' },
+			{ time: '5:30p', event: 'Drink' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Eat' },
+			{ time: '5:30p', event: 'Drink' },
 		],
 	},
 	{
 		date: 'Nov3',
 		day: 'Sun',
 		schedule: [
-			{ time: '5:30p', event: 'check-in' },
-			{ time: '5:30p', event: 'check-in' },
-			{ time: '5:30p', event: 'check-in' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Sleepppp' },
+			{ time: '5:30p', event: 'Sleepppp' },
 		],
 	},
 ];
 
+const HiddenBar = () => (
+	<ScheduleBarHiddenStyle>
+		<ScheduleBar />
+	</ScheduleBarHiddenStyle>
+);
+
+const DisplayedBar = () => (
+	<ScheduleBarStyle>
+		<ScheduleBar />
+	</ScheduleBarStyle>
+);
+
 const Schedule = () => {
-	const [curSchedule, setCurSchedule] = useState(scheduleData[0].schedule);
+	const [curSchedule, setCurSchedule] = useState(scheduleData[0]);
 	// onClick={() => setCurSchedule(...)}
 	// when use {curSchedule}
 	return (
@@ -138,34 +178,28 @@ const Schedule = () => {
 			</ScheduleLogoStyle>
 
 			<ScheduleBodyContainer>
-				{/* <ScheduleBar /> */}
-
 				<ScheduleBodyTopCol>
-					<DayText>Friday Nov1</DayText>
-					<DayText>Saturday Nov2</DayText>
-					<DayText>Sunday Nov3</DayText>
+					<DayText onClick={() => setCurSchedule(scheduleData[0])}>Friday Nov1</DayText>
+					<DayText onClick={() => setCurSchedule(scheduleData[1])}>Saturday Nov2</DayText>
+					<DayText onClick={() => setCurSchedule(scheduleData[2])}>Sunday Nov3</DayText>
 				</ScheduleBodyTopCol>
 
+				<ScheduleBarCol>
+					{curSchedule.date === 'Nov1' ? <DisplayedBar /> : <HiddenBar />}
+					{curSchedule.date === 'Nov2' ? <DisplayedBar /> : <HiddenBar />}
+					{curSchedule.date === 'Nov3' ? <DisplayedBar /> : <HiddenBar />}
+				</ScheduleBarCol>
+
 				<ScheduleBodyTimeCol>
-					<TimeText>5:30p</TimeText>
-					<TimeText>5:30p</TimeText>
-					<TimeText>5:30p</TimeText>
-					<TimeText>5:30p</TimeText>
-					<TimeText>5:30p</TimeText>
-					<TimeText>5:30p</TimeText>
-					<TimeText>5:30p</TimeText>
-					<TimeText>5:30p</TimeText>
+					{curSchedule.schedule.map(({ time }) => (
+						<TimeText>{time}</TimeText>
+					))}
 				</ScheduleBodyTimeCol>
 
 				<ScheduleBodyDescriptionCol>
-					<EventText>Description Description</EventText>
-					<EventText>Description Description</EventText>
-					<EventText>Description Description</EventText>
-					<EventText>Description Description</EventText>
-					<EventText>Description Description</EventText>
-					<EventText>Description Description</EventText>
-					<EventText>Description Description</EventText>
-					<EventText>Description Description</EventText>
+					{curSchedule.schedule.map(({ event }) => (
+						<EventText>{event}</EventText>
+					))}
 				</ScheduleBodyDescriptionCol>
 			</ScheduleBodyContainer>
 
