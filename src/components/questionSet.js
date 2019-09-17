@@ -54,8 +54,11 @@ const getSplitText = (text, shouldOpen) => {
 };
 
 const getHeight = id => {
-	const el = document.getElementById(id);
-	return el ? el.scrollHeight : 100;
+	if (typeof document !== 'undefined') {
+		// to make gatsby happy
+		const el = document.getElementById(id);
+		return el ? el.scrollHeight : 100;
+	}
 };
 
 const QuestionSet = ({ question, answer, shouldOpen, onClick }) => {
