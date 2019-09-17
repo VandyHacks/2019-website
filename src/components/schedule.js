@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
@@ -23,6 +23,7 @@ const Container = styled.div`
 		display: table;
 		clear: both;
 	}
+	margin: 12em 0;
 `;
 
 const ScheduleLogoStyle = styled.div`
@@ -60,42 +61,112 @@ const ScheduleBodyContainer = styled.div`
 	width: 50%;
 `;
 
+const ScheduleBodyTopCol = styled(ScheduleBodyContainer)`
+	width: 22%;
+	float: left;
+	top: 3em;
+	position: relative;
+`;
+
+const ScheduleBodyTimeCol = styled(ScheduleBodyContainer)`
+	width: 20%;
+	float: left;
+`;
+
+const ScheduleBodyDescriptionCol = styled(ScheduleBodyContainer)`
+	width: 58%;
+	float: left;
+`;
+
+const DayText = styled.h2`
+	text-align: right;
+	font-weight: normal;
+`;
+
+const TimeText = styled.p`
+	text-align: right;
+`;
+
+const EventText = styled.p`
+	text-align: left;
+	padding: 0 1.5em;
+`;
+
+const scheduleData = [
+	{
+		date: 'Nov1',
+		day: 'Fri',
+		schedule: [
+			{ time: '5:30p', event: 'check-in' },
+			{ time: '6:00p', event: 'dinner' },
+			{ time: '8:30p', event: 'open ceremony' },
+			{ time: '10:00p', event: 'Hacking begins' },
+			{ time: '10:00p', event: 'pitch session' },
+			{ time: '10:00p', event: 'git tech talk' },
+			{ time: '10:30p', event: 'beginner switch session' },
+			{ time: '11:00p', event: 'beginner tech talk' },
+		],
+	},
+	{
+		date: 'Nov2',
+		day: 'Sat',
+		schedule: [
+			{ time: '5:30p', event: 'check-in' },
+			{ time: '5:30p', event: 'check-in' },
+			{ time: '5:30p', event: 'check-in' },
+		],
+	},
+	{
+		date: 'Nov3',
+		day: 'Sun',
+		schedule: [
+			{ time: '5:30p', event: 'check-in' },
+			{ time: '5:30p', event: 'check-in' },
+			{ time: '5:30p', event: 'check-in' },
+		],
+	},
+];
+
 const Schedule = () => {
+	const [curSchedule, setCurSchedule] = useState(scheduleData[0].schedule);
+	// onClick={() => setCurSchedule(...)}
+	// when use {curSchedule}
 	return (
 		<Container>
-				<ScheduleLogoStyle>
-					<ScheduleTitle />
-				</ScheduleLogoStyle>
+			<ScheduleLogoStyle>
+				<ScheduleTitle />
+			</ScheduleLogoStyle>
 
 			<ScheduleBodyContainer>
-				<div>
-					<div>
-						<div>Friday</div>
-						<div>Nov 1</div>
-					</div>
+				{/* <ScheduleBar /> */}
 
-					<div>
-						<div>Saturday</div>
-						<div>Nov 2</div>
-					</div>
+				<ScheduleBodyTopCol>
+					<DayText>Friday Nov1</DayText>
+					<DayText>Saturday Nov2</DayText>
+					<DayText>Sunday Nov3</DayText>
+				</ScheduleBodyTopCol>
 
-					<div>
-						<div>Sunday</div>
-						<div>Nov 3</div>
-					</div>
-				</div>
+				<ScheduleBodyTimeCol>
+					<TimeText>5:30p</TimeText>
+					<TimeText>5:30p</TimeText>
+					<TimeText>5:30p</TimeText>
+					<TimeText>5:30p</TimeText>
+					<TimeText>5:30p</TimeText>
+					<TimeText>5:30p</TimeText>
+					<TimeText>5:30p</TimeText>
+					<TimeText>5:30p</TimeText>
+				</ScheduleBodyTimeCol>
 
-				<div>
-					<div>5:30p</div>
-					<div>6:00p</div>
-					<div>8:000p</div>
-				</div>
-
-				<div>
-					<div>Description</div>
-					<div>Description</div>
-					<div>Description</div>
-				</div>
+				<ScheduleBodyDescriptionCol>
+					<EventText>Description Description</EventText>
+					<EventText>Description Description</EventText>
+					<EventText>Description Description</EventText>
+					<EventText>Description Description</EventText>
+					<EventText>Description Description</EventText>
+					<EventText>Description Description</EventText>
+					<EventText>Description Description</EventText>
+					<EventText>Description Description</EventText>
+				</ScheduleBodyDescriptionCol>
 			</ScheduleBodyContainer>
 
 			<BoxStyle>

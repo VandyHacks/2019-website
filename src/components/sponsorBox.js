@@ -8,8 +8,6 @@ import SponsorBorder from '../images/sponsorBorder.svg';
 
 const Container = styled.div`
 	width: 100%;
-	margin-top: 15em;
-	margin-botton: 0em;
 `;
 
 const SponsorTitleStyle = styled.div`
@@ -20,7 +18,6 @@ const SponsorTitleStyle = styled.div`
 
 const SponsorBorderStyle = styled.div`
 	width: 100%;
-	justify-content: left;
 `;
 
 // see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
