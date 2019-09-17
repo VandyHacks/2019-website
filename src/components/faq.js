@@ -3,16 +3,41 @@ import styled from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
 
-import FAQItem from './faqItem';
+import FAQTitle from '../images/faqText.svg';
+import FAQUpperBar from '../images/faqUpperBar.svg';
+import FAQLowerBar from '../images/FAQLowerBar.svg';
 
+import FAQItem from './faqItem';
+import Column from './column';
+
+const Container = styled.div`
+	width: 100%;
+	align-items: end;
+`;
+
+const FAQLogoStyle = styled.div`
+	width: 15em;
+	position: relative;
+	left: 40em;
+`;
+
+const FAQBarStyle = styled.div`
+	width: 100%;
+`;
 
 const StyledDiv = styled.div`
 	margin: 3rem auto;
 	max-width: 600px;
 	display: flex;
 	flex-direction: column;
-	align-items: right;
+	align-items: end;
 	justify-content: center;
+`;
+
+const Body = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
 `;
 
 const FAQText = [
@@ -109,21 +134,43 @@ const FAQText = [
 	},
 ];
 
+const left = FAQText.filter((question, i) => !(i % 2));
+const right = FAQText.filter((question, i) => i % 2);
+// 19 in total
+
 const FAQ = () => {
 	return (
-		<StyledDiv>
-			<h2>FAQ</h2>
-			{FAQText.map((el, idx) => (
-				<FAQItem key={idx} {...el}></FAQItem>
-			))}
-		</StyledDiv>
+		<Container>
+			<FAQLogoStyle>
+				<FAQTitle />
+			</FAQLogoStyle>
+			<FAQBarStyle>
+				<FAQUpperBar />
+			</FAQBarStyle>
+
+			
+			<Body>
+            <Column questions={left} />
+            <Column questions={right} />
+      		</Body>
+
+			{/* <StyledDiv>  */}
+				{/* {FAQText.map((el, idx) => (
+					<FAQItem key={idx} {...el}></FAQItem>
+				))} */}
+			{/* </StyledDiv> */}
+
+			<FAQBarStyle>
+				<FAQLowerBar />
+			</FAQBarStyle>
+		</Container>
 	);
 };
 
 const FAQAnimated = () => (
 	<InViewMonitor
 		classNameNotInView="vis-hidden"
-		classNameInView="animated fadeInLeft" // fadeInLeft, or fadeInRight
+		classNameInView="animated fadeInRight" // fadeInLeft, or fadeInRight
 	>
 		<FAQ />
 	</InViewMonitor>

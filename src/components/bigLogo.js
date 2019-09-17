@@ -23,20 +23,23 @@ const LogoGridStyle = styled.div`
 	left: 25em;
 	width: 60%;
 	opacity: 1;
+	z-index: -1;
 `;
 
-// TODO white fill and animation later!
 const LogoOnlyStyle = styled.div`
 	display: inline-block;
 	width: 30%;
 	justify-content: center;
-	fill: black;
 	fill-opacity: 1;
+	z-index: 2;
 `;
 
 const LogoVandyHacksTextStyle = styled.div`
 	width: 30em;
 	margin: 1.5em auto 0.3em auto;
+	fill: white;
+	fill-opacity: 1;
+	z-index: 2;
 `;
 
 const LocationDateTextStyle = styled.div`
@@ -70,7 +73,7 @@ const BigLogoWithGrid = () => (
 			<LocationDateText />
 		</LocationDateTextStyle>
 
-		<LogoGridStyle>
+		<LogoGridStyle className="fadeIn">
 			<Grid />
 		</LogoGridStyle>
 	</Container>

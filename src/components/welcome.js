@@ -11,7 +11,8 @@ import Pen3 from '../images/stationeryPen3.svg';
 
 const Container = styled.div`
 	width: 100%;
-	margin-top: 13em;
+	margin-top: 15em;
+	margin-botton: 0em;
 `;
 
 const WelcomeLogoStyle = styled.div`
@@ -24,9 +25,9 @@ const WelcomeTextStyle = styled.p`
 	position: relative;
 	text-align: left;
 	top: -19em;
-	padding: 0.5em 7.5em 0em 6em;
+	padding: 0.3em 8.7em 0em 7em;
 	color: #3048a1;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	display: block;
 	line-height: 1.5em;
 `;
@@ -34,6 +35,7 @@ const WelcomeTextStyle = styled.p`
 const WelcomeBoxStyle = styled.div`
 	position: realtive;
 	width: 40em;
+	height: 40em;
 	opacity: 1;
 	margin-bottom: 0;
 `;
@@ -67,6 +69,7 @@ const welcomeText =
 	'VandyHacks is back this Fall in the Music City–and it’s ready to redesign hackathons.';
 const welcomeTextCont =
 	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to Code a Masterpiece.';
+// code a masterpiece bold ?
 
 const Welcome = () => {
 	return (

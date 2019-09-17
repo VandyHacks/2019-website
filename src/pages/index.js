@@ -22,9 +22,8 @@ const IndexPage = () => (
 		<BigLogoWithGridAnimated />
 		<WelcomeAnimated />
 		<FAQAnimated />
-
-		<Schedule></Schedule>
-		<SponsorBox></SponsorBox>
+		{/* <Schedule /> */}
+		{/* <SponsorBox /> */}
 	</Container>
 );
 
