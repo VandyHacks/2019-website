@@ -17,7 +17,13 @@ import Pen from '../images/stationeryPen.svg';
 
 // we're going to have to do a lot of fancy css here to get the scrolling to look right.
 
-const Container = styled.div``;
+const Container = styled.div`
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+`;
 
 const ScheduleLogoStyle = styled.div`
 	width: 35%;
@@ -49,41 +55,49 @@ const PenStyle = styled.div`
 	opacity: 1;
 `;
 
+const ScheduleBodyContainer = styled.div`
+	float: right;
+	width: 50%;
+`;
 
 const Schedule = () => {
 	return (
 		<Container>
-			<ScheduleLogoStyle>
-				<ScheduleTitle />
-			</ScheduleLogoStyle>
-			<div>
+				<ScheduleLogoStyle>
+					<ScheduleTitle />
+				</ScheduleLogoStyle>
+
+			<ScheduleBodyContainer>
 				<div>
-					<div>Friday</div>
-					<div>Nov 1</div>
+					<div>
+						<div>Friday</div>
+						<div>Nov 1</div>
+					</div>
+
+					<div>
+						<div>Saturday</div>
+						<div>Nov 2</div>
+					</div>
+
+					<div>
+						<div>Sunday</div>
+						<div>Nov 3</div>
+					</div>
 				</div>
 
 				<div>
-					<div>Saturday</div>
-					<div>Nov 2</div>
+					<div>5:30p</div>
+					<div>6:00p</div>
+					<div>8:000p</div>
 				</div>
 
 				<div>
-					<div>Sunday</div>
-					<div>Nov 3</div>
+					<div>Description</div>
+					<div>Description</div>
+					<div>Description</div>
 				</div>
-			</div>
+			</ScheduleBodyContainer>
 
-			<div>
-				<div>5:30p</div>
-				<div>6:00p</div>
-				<div>8:000p</div>
-			</div>
-
-			<div>
-				<div>Description</div>
-				<div>Description</div>
-				<div>Description</div>
-			</div>
 			<BoxStyle>
 				<Box />
 			</BoxStyle>
@@ -106,6 +120,5 @@ const ScheduleAnimated = () => (
 		<Schedule />
 	</InViewMonitor>
 );
-
 
 export default ScheduleAnimated;

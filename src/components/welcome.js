@@ -21,12 +21,12 @@ const WelcomeLogoStyle = styled.div`
 `;
 
 // top right bottom left
+//	color: #3048a1;
 const WelcomeTextStyle = styled.p`
 	position: relative;
 	text-align: left;
 	top: -19em;
 	padding: 0.3em 8.7em 0em 7em;
-	color: #3048a1;
 	font-size: 1.2em;
 	display: block;
 	line-height: 1.5em;

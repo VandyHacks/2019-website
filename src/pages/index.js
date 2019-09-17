@@ -9,7 +9,7 @@ import BigLogoWithGridAnimated from '../components/bigLogo';
 import WelcomeAnimated from '../components/welcome';
 import FAQAnimated from '../components/faq';
 import ScheduleAnimated from '../components/schedule';
-import SponsorBox from '../components/sponsorBox';
+import SponsorBoxAnimated from '../components/sponsorBox';
 
 const Container = styled.div`
 	width: 76%;
@@ -23,7 +23,7 @@ const IndexPage = () => (
 		<WelcomeAnimated />
 		<FAQAnimated />
 		<ScheduleAnimated />
-		{/* <SponsorBox /> */}
+		<SponsorBoxAnimated />
 	</Container>
 );
 

@@ -1,19 +1,49 @@
 import React from 'react';
-// import Image from './image'; //TODO: USE THIS!
+import styled from 'styled-components';
+
+import InViewMonitor from 'react-inview-monitor';
+
+import SponsorTitle from '../images/sponsorText.svg';
+import SponsorBorder from '../images/sponsorBorder.svg';
+
+const Container = styled.div`
+	width: 100%;
+	margin-top: 15em;
+	margin-botton: 0em;
+`;
+
+const SponsorTitleStyle = styled.div`
+	width: 20em;
+	position: relative;
+	left: 75%;
+`;
+
+const SponsorBorderStyle = styled.div`
+	width: 100%;
+	justify-content: left;
+`;
 
 // see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
 const SponsorBox = () => {
 	return (
-		<div>
-			<h2>Sponsors</h2>
-			{/* <a href="https://engineering.vanderbilt.edu/" target="_blank" rel="noopener">
-				<Image
-					src="~assets/img/sponsors/vuse.svg"
-					alt="Vanderbilt University School of Engineering"
-				></Image>
-			</a> */}
-		</div>
+		<Container>
+			<SponsorTitleStyle>
+				<SponsorTitle />
+			</SponsorTitleStyle>
+			<SponsorBorderStyle>
+				<SponsorBorder />
+			</SponsorBorderStyle>
+		</Container>
 	);
 };
 
-export default SponsorBox;
+const SponsorBoxAnimated = () => (
+	<InViewMonitor
+		classNameNotInView="vis-hidden"
+		classNameInView="animated fadeInUp" // fadeInLeft, or fadeInRight
+	>
+		<SponsorBox />
+	</InViewMonitor>
+);
+
+export default SponsorBoxAnimated;
