@@ -8,7 +8,7 @@ import '../components/layout.css';
 import BigLogoWithGridAnimated from '../components/bigLogo';
 import WelcomeAnimated from '../components/welcome';
 import FAQAnimated from '../components/faq';
-import Schedule from '../components/schedule';
+import ScheduleAnimated from '../components/schedule';
 import SponsorBox from '../components/sponsorBox';
 
 const Container = styled.div`
@@ -22,7 +22,7 @@ const IndexPage = () => (
 		<BigLogoWithGridAnimated />
 		<WelcomeAnimated />
 		<FAQAnimated />
-		{/* <Schedule /> */}
+		<ScheduleAnimated />
 		{/* <SponsorBox /> */}
 	</Container>
 );

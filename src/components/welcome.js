@@ -69,7 +69,7 @@ const welcomeText =
 	'VandyHacks is back this Fall in the Music City–and it’s ready to redesign hackathons.';
 const welcomeTextCont =
 	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to Code a Masterpiece.';
-// code a masterpiece bold ?
+// TODO code a masterpiece bold ?
 
 const Welcome = () => {
 	return (

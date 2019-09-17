@@ -1,4 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import InViewMonitor from 'react-inview-monitor';
+
+import ScheduleTitle from '../images/scheduleText.svg';
+import ScheduleBar from '../images/scheduleDateBar.svg';
+import Box from '../images/stationeryBox.svg';
+import Box2 from '../images/stationeryBox2.svg';
+import Pen from '../images/stationeryPen.svg';
 
 // this data for this actually *should* come from the data layer
 // fetching from vaken's schedule plugin support thing
@@ -7,10 +16,46 @@ import React from 'react';
 // gatsby has graphql support though which should make it easier
 
 // we're going to have to do a lot of fancy css here to get the scrolling to look right.
+
+const Container = styled.div``;
+
+const ScheduleLogoStyle = styled.div`
+	width: 35%;
+	position: relative;
+	top: 20em;
+`;
+
+const BoxStyle = styled.div`
+	position: absolute;
+	top: 2em;
+	left: 6em;
+	width: 7em;
+	opacity: 1;
+`;
+
+const Box2Style = styled.div`
+	position: absolute;
+	top: 2em;
+	left: 22em;
+	width: 7em;
+	opacity: 1;
+`;
+
+const PenStyle = styled.div`
+	position: absolute;
+	top: 6em;
+	left: -2em;
+	width: 8em;
+	opacity: 1;
+`;
+
+
 const Schedule = () => {
 	return (
-		<div>
-			<h2>Schedule</h2>
+		<Container>
+			<ScheduleLogoStyle>
+				<ScheduleTitle />
+			</ScheduleLogoStyle>
 			<div>
 				<div>
 					<div>Friday</div>
@@ -39,8 +84,28 @@ const Schedule = () => {
 				<div>Description</div>
 				<div>Description</div>
 			</div>
-		</div>
+			<BoxStyle>
+				<Box />
+			</BoxStyle>
+
+			<Box2Style>
+				<Box2 />
+			</Box2Style>
+			<PenStyle>
+				<Pen />
+			</PenStyle>
+		</Container>
 	);
 };
 
-export default Schedule;
+const ScheduleAnimated = () => (
+	<InViewMonitor
+		classNameNotInView="vis-hidden"
+		classNameInView="animated fadeInLeft" // fadeInLeft, or fadeInRight
+	>
+		<Schedule />
+	</InViewMonitor>
+);
+
+
+export default ScheduleAnimated;

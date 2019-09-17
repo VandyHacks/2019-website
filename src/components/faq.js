@@ -8,16 +8,16 @@ import FAQUpperBar from '../images/faqUpperBar.svg';
 import FAQLowerBar from '../images/FAQLowerBar.svg';
 
 import Column from './column';
+import useWindowWidth from './useWindowWidth';
 
 const Container = styled.div`
 	width: 100%;
-	align-items: end;
 `;
 
 const FAQLogoStyle = styled.div`
-	width: 15em;
+	width: 20em;
 	position: relative;
-	left: 40em;
+	left: 75%;
 `;
 
 const FAQUpperBarStyle = styled.div`
@@ -28,11 +28,14 @@ const FAQUpperBarStyle = styled.div`
 `;
 
 const FAQLowerBarStyle = styled.div`
-	width: 60%;
-
+	width: 55%;
+	top: 95%;
+	left: 50%;
+	position: absolute;
+	z-index: -100;
 `;
 
-const Body = styled.div`
+const TextBody = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-top: 32px;
@@ -139,6 +142,7 @@ const right = FAQText.filter((question, i) => i % 2);
 // 19 in total
 
 const FAQ = () => {
+	const isMobile = useWindowWidth() <= 768;
 	return (
 		<Container>
 			<FAQLogoStyle>
@@ -149,10 +153,16 @@ const FAQ = () => {
 				<FAQUpperBar />
 			</FAQUpperBarStyle>
 
-			<Body>
-				<Column questions={left} />
-				<Column questions={right} />
-			</Body>
+			<TextBody>
+				{isMobile ? (
+					<Column questions={FAQText} />
+				) : (
+					<>
+						<Column questions={left} />
+						<Column questions={right} />
+					</>
+				)}
+			</TextBody>
 
 			<FAQLowerBarStyle>
 				<FAQLowerBar />
