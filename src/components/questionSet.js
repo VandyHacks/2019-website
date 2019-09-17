@@ -8,7 +8,7 @@ const QuestionSetContainer = styled.div`
 	margin-bottom: 25px;
 `;
 
-const QuestionClickArea = styled.button`
+const QuestionClickArea = styled.div`
 	text-align: left;
 	&:focus {
 		opacity: 0.8;
@@ -25,6 +25,17 @@ const NoWrapContainer = styled.span`
 	white-space: nowrap;
 `;
 
+const StyledQuestion = styled.h2`
+	cursor: pointer;
+	font-size: 1.2em;
+	font-weight: lighter;
+	text-align: left;
+`;
+
+const StyledAnswer = styled.p`
+	text-align: left;
+`;
+
 const getSplitText = (text, shouldOpen) => {
 	const lastSpaceIndex = text.lastIndexOf(' ');
 	const wrappableText = text.substring(0, lastSpaceIndex + 1);
@@ -32,13 +43,13 @@ const getSplitText = (text, shouldOpen) => {
 
 	return (
 		// consider text later
-		<h2>
+		<StyledQuestion>
 			{wrappableText}
 			<NoWrapContainer>
 				{lastWord}
 				<Arrow open={shouldOpen} />
 			</NoWrapContainer>
-		</h2>
+		</StyledQuestion>
 	);
 };
 
@@ -65,7 +76,7 @@ const QuestionSet = ({ question, answer, shouldOpen, onClick }) => {
 		<QuestionSetContainer>
 			<QuestionClickArea onClick={onClick}>{getSplitText(question, shouldOpen)}</QuestionClickArea>
 			<Collapsible id={question} open={shouldOpen} height={height}>
-				<p> {answer} </p>
+				<StyledAnswer>{answer}</StyledAnswer>
 			</Collapsible>
 		</QuestionSetContainer>
 	);
