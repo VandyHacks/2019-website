@@ -16,7 +16,7 @@ const Container = styled.div`
 `;
 
 const WelcomeLogoStyle = styled.div`
-	width: 30%;
+	width: 18em;
 	justify-content: left;
 `;
 
@@ -25,42 +25,43 @@ const WelcomeLogoStyle = styled.div`
 const WelcomeTextStyle = styled.p`
 	position: relative;
 	text-align: left;
-	top: -19em;
-	padding: 0.3em 8.7em 0em 7em;
-	font-size: 1.2em;
+	top: -20em;
+	font-size: 1em;
 	display: block;
-	line-height: 1.5em;
+	line-height: 1.7em;
+	width: 17em;
+	margin-left: 7em;
 `;
 
 const WelcomeBoxStyle = styled.div`
-	position: realtive;
-	width: 40em;
-	height: 40em;
+	position: relative;
+	width: 33em;
+	height: 27em;
 	opacity: 1;
-	margin-bottom: 0;
+	margin-bottom: 5em;
 `;
 
 const EraserStyle = styled.div`
 	position: absolute;
-	top: 21em;
-	left: 84%;
-	width: 6em;
+	top: 17em;
+	left: 94%;
+	width: 5em;
 	opacity: 1;
 `;
 
 const Pen2Style = styled.div`
 	position: absolute;
-	top: 7em;
-	left: 65%;
-	width: 4.5em;
+	top: 6em;
+	left: 75%;
+	width: 3.5em;
 	opacity: 1;
 `;
 
 const Pen3Style = styled.div`
 	position: absolute;
-	top: -2em;
-	left: 78%;
-	width: 7.5em;
+	top: -1em;
+	left: 88%;
+	width: 7em;
 	opacity: 1;
 `;
 
