@@ -9,7 +9,7 @@ import '../../node_modules/animate.css/animate.min.css';
 import LogoOnly from '../images/logoOnly.svg';
 import LogoVandyHacksText from '../images/textVandyHacks.svg';
 import Grid from '../images/gridLogo.svg';
-import LocationDateText from '../images/LocationDateText.svg';
+import LocationDateText from '../images/locationDateText.svg';
 
 const Container = styled.div`
 	width: 76%;

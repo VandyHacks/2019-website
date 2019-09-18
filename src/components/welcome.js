@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import InViewMonitor from 'react-inview-monitor';
 
 import WelcomeTitle from '../images/welcomeText.svg';
-import WelcomeBorder from '../images/WelcomeBorder.svg';
+import WelcomeBorder from '../images/welcomeBorder.svg';
 import Eraser from '../images/stationeryEraser.svg';
 import Pen2 from '../images/stationeryPen2.svg';
 import Pen3 from '../images/stationeryPen3.svg';
