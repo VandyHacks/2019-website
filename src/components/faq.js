@@ -5,7 +5,7 @@ import InViewMonitor from 'react-inview-monitor';
 
 import FAQTitle from '../images/faqText.svg';
 import FAQUpperBar from '../images/faqUpperBar.svg';
-import FAQLowerBar from '../images/FAQLowerBar.svg';
+import FAQLowerBar from '../images/faqLowerBar.svg';
 
 import Column from './column';
 import useWindowWidth from './useWindowWidth';
