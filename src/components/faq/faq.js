@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
 
-import FAQTitle from '../images/faqText.svg';
-import FAQUpperBar from '../images/faqUpperBar.svg';
-import FAQLowerBar from '../images/faqLowerBar.svg';
+import FAQTitle from '../../images/faqText.svg';
+import FAQUpperBar from '../../images/faqUpperBar.svg';
+import FAQLowerBar from '../../images/faqLowerBar.svg';
 
 import Column from './column';
-import useWindowWidth from './useWindowWidth';
+import useWindowWidth from '../utils/useWindowWidth';
 
 const Container = styled.div`
 	width: 100%;
