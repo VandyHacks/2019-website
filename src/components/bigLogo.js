@@ -20,10 +20,14 @@ const Container = styled.div`
 const LogoGridStyle = styled.div`
 	position: absolute;
 	top: 14em;
-	left: 25em;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
 	width: 60%;
 	opacity: 1;
 	z-index: -1;
+	
 `;
 
 const LogoOnlyStyle = styled.div`
@@ -37,6 +41,10 @@ const LogoOnlyStyle = styled.div`
 const LogoVandyHacksTextStyle = styled.div`
 	width: 30em;
 	margin: 1.5em auto 0.3em auto;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
 	fill: white;
 	fill-opacity: 1;
 	z-index: 2;
@@ -45,6 +53,10 @@ const LogoVandyHacksTextStyle = styled.div`
 const LocationDateTextStyle = styled.div`
 	width: 20em;
 	margin: 0.6em auto;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
 `;
 
 const ScrollAnimateInLineSvg = ({ SvgElement }) => (
