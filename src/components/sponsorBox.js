@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 
 const SponsorTitleStyle = styled.div`
-	width: 20em;
+	width: 30%;
 	position: relative;
 	left: 75%;
 `;

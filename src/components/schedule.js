@@ -43,7 +43,7 @@ const BoxStyle = styled.div`
 const Box2Style = styled.div`
 	position: absolute;
 	top: 2em;
-	left: 22em;
+	left: 16em;
 	width: 7em;
 	opacity: 1;
 `;
@@ -51,7 +51,7 @@ const Box2Style = styled.div`
 const PenStyle = styled.div`
 	position: absolute;
 	top: 6em;
-	left: -2em;
+	left: -4em;
 	width: 8em;
 	opacity: 1;
 `;
@@ -179,9 +179,9 @@ const Schedule = () => {
 
 			<ScheduleBodyContainer>
 				<ScheduleBodyTopCol>
-					<DayText onClick={() => setCurSchedule(scheduleData[0])}>Friday Nov1</DayText>
-					<DayText onClick={() => setCurSchedule(scheduleData[1])}>Saturday Nov2</DayText>
-					<DayText onClick={() => setCurSchedule(scheduleData[2])}>Sunday Nov3</DayText>
+					<DayText onClick={() => setCurSchedule(scheduleData[0])}>Friday Nov 1</DayText>
+					<DayText onClick={() => setCurSchedule(scheduleData[1])}>Saturday Nov 2</DayText>
+					<DayText onClick={() => setCurSchedule(scheduleData[2])}>Sunday Nov 3</DayText>
 				</ScheduleBodyTopCol>
 
 				<ScheduleBarCol>
