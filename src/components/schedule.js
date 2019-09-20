@@ -36,7 +36,7 @@ const BoxStyle = styled.div`
 	position: absolute;
 	top: 2em;
 	left: 6em;
-	width: 7em;
+	width: 13vh;
 	opacity: 1;
 `;
 
@@ -44,7 +44,7 @@ const Box2Style = styled.div`
 	position: absolute;
 	top: 2em;
 	left: 16em;
-	width: 7em;
+	width: 13vh;
 	opacity: 1;
 `;
 
@@ -52,7 +52,7 @@ const PenStyle = styled.div`
 	position: absolute;
 	top: 6em;
 	left: -4em;
-	width: 8em;
+	width: 14vh;
 	opacity: 1;
 `;
 
