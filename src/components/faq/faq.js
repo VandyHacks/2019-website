@@ -6,6 +6,7 @@ import InViewMonitor from 'react-inview-monitor';
 import FAQTitle from '../../images/faqText.svg';
 import FAQUpperBar from '../../images/faqUpperBar.svg';
 import FAQLowerBar from '../../images/faqLowerBar.svg';
+import Pen2 from '../../images/stationeryPen2.svg';
 
 import Column from './column';
 import useWindowWidth from '../utils/useWindowWidth';
@@ -15,14 +16,28 @@ const Container = styled.div`
 `;
 
 const FAQLogoStyle = styled.div`
-	width: 30%;
+	width: 15em;
 	position: relative;
 	left: 75%;
+`;
+
+const FAQLogoMobileStyle = styled.div`
+	width: 11em;
+	position: relative;
+	margin-right: -1em;
+	margin-left: auto;
 `;
 
 const FAQUpperBarStyle = styled.div`
 	width: 55%;
 	top: 3em;
+	position: absolute;
+	z-index: -100;
+`;
+
+const FAQUpperBarMobileStyle = styled.div`
+	width: 100%;
+	top: -2em;
 	position: absolute;
 	z-index: -100;
 `;
@@ -35,12 +50,33 @@ const FAQLowerBarStyle = styled.div`
 	z-index: -100;
 `;
 
+const FAQLowerBarMobileStyle = styled.div`
+	width: 100%;
+	top: 3em;
+	position: absolute;
+	z-index: -100;
+`;
+
 const TextBody = styled.div`
 	display: flex;
 	justify-content: space-between;
 	margin-top: 32px;
 	margin-left: 3em;
 	mragin-right: 3em;
+`;
+
+const TextBodyMobile = styled.div`
+	margin-top: 2em;
+	margin-left: 0.3em;
+`;
+
+const Pen2MobileStyle = styled.div`
+	position: absolute;
+	top: 0.2em;
+	left: 20%;
+	width: 1.6em;
+	opacity: 1;
+	transform: rotate(-20deg);
 `;
 
 const FAQText = [
@@ -143,32 +179,43 @@ const right = FAQText.filter((question, i) => i % 2);
 
 const FAQ = () => {
 	const isMobile = useWindowWidth() <= 768;
-	return (
-		<Container>
-			<FAQLogoStyle>
-				<FAQTitle />
-			</FAQLogoStyle>
+	if (isMobile) {
+		return (
+			<Container>
+				<Pen2MobileStyle>
+					<Pen2 />
+				</Pen2MobileStyle>
+				<FAQLogoMobileStyle>
+					<FAQTitle />
+				</FAQLogoMobileStyle>
 
-			<FAQUpperBarStyle>
-				<FAQUpperBar />
-			</FAQUpperBarStyle>
-
-			<TextBody>
-				{isMobile ? (
+				<TextBodyMobile>
 					<Column questions={FAQText} />
-				) : (
-					<>
-						<Column questions={left} />
-						<Column questions={right} />
-					</>
-				)}
-			</TextBody>
+				</TextBodyMobile>
+			</Container>
+		);
+	} else {
+		return (
+			<Container>
+				<FAQLogoStyle>
+					<FAQTitle />
+				</FAQLogoStyle>
 
-			<FAQLowerBarStyle>
-				<FAQLowerBar />
-			</FAQLowerBarStyle>
-		</Container>
-	);
+				<FAQUpperBarStyle>
+					<FAQUpperBar />
+				</FAQUpperBarStyle>
+
+				<TextBody>
+					<Column questions={left} />
+					<Column questions={right} />
+				</TextBody>
+
+				<FAQLowerBarStyle>
+					<FAQLowerBar />
+				</FAQLowerBarStyle>
+			</Container>
+		);
+	}
 };
 
 const FAQAnimated = () => (
