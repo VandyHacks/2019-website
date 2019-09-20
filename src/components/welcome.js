@@ -28,7 +28,7 @@ const WelcomeTextStyle = styled.p`
 	top: -20em;
 	font-size: 1em;
 	display: block;
-	line-height: 1.7em;
+	line-height: 1.5em;
 	width: 17em;
 	margin-left: 7em;
 `;
@@ -68,10 +68,12 @@ const Pen3Style = styled.div`
 // place holder for text
 const welcomeText =
 	'VandyHacks is back this Fall in the Music City–and it’s ready to redesign hackathons.';
+const welcomeBoldPresent = 
+	'Presenting VandyHacks VI: Art Edition.'
 const welcomeTextCont =
-	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to Code a Masterpiece.';
-// TODO code a masterpiece bold ?
-
+	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to';
+const welcomeBoldCode = 
+	' Code a Masterpiece.'
 const Welcome = () => {
 	return (
 		<Container>
@@ -82,7 +84,9 @@ const Welcome = () => {
 			<WelcomeBoxStyle>
 				<WelcomeBorder />
 				<WelcomeTextStyle>{welcomeText}</WelcomeTextStyle>
+				<WelcomeTextStyle style={{fontWeight:"bold", lineHeight:'0'}}>{welcomeBoldPresent}</WelcomeTextStyle>
 				<WelcomeTextStyle>{welcomeTextCont}</WelcomeTextStyle>
+					<WelcomeTextStyle style={{fontWeight:"bold", lineHeight:'0'}}>{welcomeBoldCode}</WelcomeTextStyle>
 			</WelcomeBoxStyle>
 
 			<EraserStyle>
