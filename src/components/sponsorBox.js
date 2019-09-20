@@ -5,6 +5,10 @@ import InViewMonitor from 'react-inview-monitor';
 
 import SponsorTitle from '../images/sponsorText.svg';
 import SponsorBorder from '../images/sponsorBorder.svg';
+import useWindowWidth from './utils/useWindowWidth.js';
+import UpperBorderBar from '../images/faqUpperBar.svg';
+import LowerBorderBar from '../images/faqLowerBar.svg';
+import Grid from '../images/gridLogo.svg';
 
 const Container = styled.div`
 	width: 100%;
@@ -20,8 +24,41 @@ const SponsorBorderStyle = styled.div`
 	width: 100%;
 `;
 
+const SponsorTitleStyleMobile = styled.div`
+	width: 12em;
+`;
+
+const SponsorBorderStyleMobile = styled.div`
+	width: 100%;
+	margin-top: -.5em;
+`;
+
+const LogoGridStyleMobile = styled.div`
+	top: 9em;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 120%;
+	opacity: 1;
+	z-index: -1;
+`;
+
 // see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
 const SponsorBox = () => {
+	const isMobile = useWindowWidth() <= 768;
+	if(isMobile) {
+	return (
+		<Container>
+			<SponsorTitleStyleMobile>
+				<SponsorTitle />
+			</SponsorTitleStyleMobile>
+			<LogoGridStyleMobile >
+				<Grid />
+			</LogoGridStyleMobile>
+		</Container>
+	);
+	} else
 	return (
 		<Container>
 			<SponsorTitleStyle>
