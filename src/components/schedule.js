@@ -83,12 +83,12 @@ const ScheduleBodyContainer = styled.div`
 `;
 
 const ScheduleBodyContainerMobile = styled.div`
-	margin-top: 1.5em;
-	margin-left: 2em;
+	margin-top: 2em;
+	margin-left: 1.3em;
 	width: 100%;
 `;
 
-const ScheduleRightMobileCol = styled(ScheduleBodyContainer)`
+const ScheduleRightCol = styled(ScheduleBodyContainer)`
 	width: 75%;
 `;
 
@@ -99,13 +99,13 @@ const ScheduleBodyTopCol = styled(ScheduleBodyContainer)`
 	position: relative;
 `;
 
-const ScheduleBodyTimeCol = styled(ScheduleBodyContainer)`
-	width: 23%;
+const ScheduleBodyTimeCol = styled(ScheduleRightCol)`
+	width: 27%;
 	float: left;
 `;
 
-const ScheduleBodyDescriptionCol = styled(ScheduleBodyContainer)`
-	width: 52%;
+const ScheduleBodyDescriptionCol = styled(ScheduleRightCol)`
+	width: 72%;
 	float: left;
 `;
 
@@ -132,7 +132,7 @@ const scheduleData = [
 		date: 'Nov1',
 		day: 'Fri',
 		schedule: [
-			{ time: '5:30pm', event: 'check-in' },
+			{ time: '5:30p', event: 'check-in' },
 			{ time: '6:00p', event: 'dinner' },
 			{ time: '8:30p', event: 'open ceremony' },
 			{ time: '10:00p', event: 'Hacking begins' },
@@ -197,17 +197,18 @@ const Schedule = () => {
 						</DayText>
 					</ScheduleBodyTopCol>
 
-					<ScheduleBodyTimeCol>
-						{curSchedule.schedule.map(({ time }) => (
-							<TimeText>{time}</TimeText>
+					<ScheduleRightCol>
+						{curSchedule.schedule.map(({ time, event }) => (
+							<div>
+								<ScheduleBodyTimeCol>
+									<TimeText>{time}</TimeText>
+								</ScheduleBodyTimeCol>
+								<ScheduleBodyDescriptionCol>
+									<EventText>{event}</EventText>
+								</ScheduleBodyDescriptionCol>
+							</div>
 						))}
-					</ScheduleBodyTimeCol>
-
-					<ScheduleBodyDescriptionCol>
-						{curSchedule.schedule.map(({ event }) => (
-							<EventText>{event}</EventText>
-						))}
-					</ScheduleBodyDescriptionCol>
+					</ScheduleRightCol>
 				</ScheduleBodyContainerMobile>
 			</ContainerMobile>
 		);
@@ -231,17 +232,18 @@ const Schedule = () => {
 						</DayText>
 					</ScheduleBodyTopCol>
 
-					<ScheduleBodyTimeCol>
-						{curSchedule.schedule.map(({ time }) => (
-							<TimeText>{time}</TimeText>
+					<ScheduleRightCol>
+						{curSchedule.schedule.map(({ time, event }) => (
+							<div>
+								<ScheduleBodyTimeCol>
+									<TimeText>{time}</TimeText>
+								</ScheduleBodyTimeCol>
+								<ScheduleBodyDescriptionCol>
+									<EventText>{event}</EventText>
+								</ScheduleBodyDescriptionCol>
+							</div>
 						))}
-					</ScheduleBodyTimeCol>
-
-					<ScheduleBodyDescriptionCol>
-						{curSchedule.schedule.map(({ event }) => (
-							<EventText>{event}</EventText>
-						))}
-					</ScheduleBodyDescriptionCol>
+					</ScheduleRightCol>
 				</ScheduleBodyContainer>
 
 				<BoxStyle>
