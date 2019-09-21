@@ -77,6 +77,32 @@ const PenStyle = styled.div`
 	opacity: 1;
 `;
 
+const BoxStyleMobile = styled.div`
+	position: static;
+	width: 20%;
+	opacity: 1;
+	float: right;
+	margin-right: 3em;
+	margin-top: -2em;
+`;
+
+const Box2StyleMobile = styled.div`
+	position: static;
+	width: 22%;
+	opacity: 1;
+	float: right;
+	margin-top: -1em;
+`;
+
+const PenStyleMobile = styled.div`
+	position: static;
+	width: 25%;
+	opacity: 1;
+	float: left;
+	margin-bottom: 2em;
+	margin-left: 2em;
+`;
+
 const ScheduleBodyContainer = styled.div`
 	float: right;
 	width: 50%;
@@ -181,6 +207,16 @@ const Schedule = () => {
 	if (isMobile) {
 		return (
 			<ContainerMobile>
+
+				<Box2StyleMobile>
+					<Box2 />
+				</Box2StyleMobile>
+				<BoxStyleMobile>
+					<Box />
+				</BoxStyleMobile>
+				<PenStyleMobile>
+					<Pen />
+				</PenStyleMobile>
 				<ScheduleLogoMobileStyle>
 					<ScheduleTitle />
 				</ScheduleLogoMobileStyle>
