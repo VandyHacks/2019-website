@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
+import useWindowWidth from './utils/useWindowWidth';
 
 import ScheduleTitle from '../images/scheduleText.svg';
-import ScheduleBar from '../images/scheduleDateBar.svg';
 import Box from '../images/stationeryBox.svg';
 import Box2 from '../images/stationeryBox2.svg';
 import Pen from '../images/stationeryPen.svg';
+import FriBar from '../images/schedule/friBar.svg';
+import FriNoBar from '../images/schedule/friNoBar.svg';
+import SatBar from '../images/schedule/satBar.svg';
+import SatNoBar from '../images/schedule/satNoBar.svg';
+import SunBar from '../images/schedule/sunBar.svg';
+import SunNoBar from '../images/schedule/sunNoBar.svg';
 
 // this data for this actually *should* come from the data layer
 // fetching from vaken's schedule plugin support thing
@@ -26,10 +32,25 @@ const Container = styled.div`
 	margin: 12em 0;
 `;
 
+const ContainerMobile = styled.div`
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	margin: 6em 0;
+`;
+
 const ScheduleLogoStyle = styled.div`
 	width: 35%;
 	position: relative;
 	top: 20em;
+`;
+
+const ScheduleLogoMobileStyle = styled.div`
+	width: 90%;
+	position: relative;
+	left 10%;
 `;
 
 const BoxStyle = styled.div`
@@ -61,44 +82,40 @@ const ScheduleBodyContainer = styled.div`
 	width: 50%;
 `;
 
+const ScheduleBodyContainerMobile = styled.div`
+	margin-top: 1.5em;
+	margin-left: 2em;
+	width: 100%;
+`;
+
+const ScheduleRightMobileCol = styled(ScheduleBodyContainer)`
+	width: 75%;
+`;
+
 const ScheduleBodyTopCol = styled(ScheduleBodyContainer)`
-	width: 22%;
+	width: 25%;
 	float: left;
 	top: 3em;
 	position: relative;
 `;
 
 const ScheduleBodyTimeCol = styled(ScheduleBodyContainer)`
-	width: 20%;
+	width: 23%;
 	float: left;
 `;
 
 const ScheduleBodyDescriptionCol = styled(ScheduleBodyContainer)`
-	width: 50%;
+	width: 52%;
 	float: left;
 `;
 
-const ScheduleBarCol = styled(ScheduleBodyContainer)`
-	width: 3%;
-	float: left;
-	top: 3em;
-	position: relative;
-	margin-left: 1em;
-`;
-
-const ScheduleBarStyle = styled.div`
-	width: 0.5em;
-`;
-
-const ScheduleBarHiddenStyle = styled(ScheduleBarStyle)`
-	opacity: 0;
-`;
-
-const DayText = styled.h2`
-	text-align: right;
-	font-weight: normal;
+//	color: #3048a1;	font-weight: normal;
+const DayText = styled.div`
+	float: right;
+	padding-right: 0;
 	cursor: pointer;
-	color: #3048a1;
+	margin: 1em auto;
+	width: 100%;
 `;
 
 const TimeText = styled.p`
@@ -115,13 +132,13 @@ const scheduleData = [
 		date: 'Nov1',
 		day: 'Fri',
 		schedule: [
-			{ time: '5:30p', event: 'check-in' },
+			{ time: '5:30pm', event: 'check-in' },
 			{ time: '6:00p', event: 'dinner' },
 			{ time: '8:30p', event: 'open ceremony' },
 			{ time: '10:00p', event: 'Hacking begins' },
 			{ time: '10:00p', event: 'pitch session' },
 			{ time: '10:00p', event: 'git tech talk' },
-			{ time: '10:30p', event: 'beginner switch session' },
+			{ time: '10:30p', event: 'beginner session' },
 			{ time: '11:00p', event: 'beginner tech talk' },
 		],
 	},
@@ -155,66 +172,91 @@ const scheduleData = [
 	},
 ];
 
-const HiddenBar = () => (
-	<ScheduleBarHiddenStyle>
-		<ScheduleBar />
-	</ScheduleBarHiddenStyle>
-);
-
-const DisplayedBar = () => (
-	<ScheduleBarStyle>
-		<ScheduleBar />
-	</ScheduleBarStyle>
-);
-
 const Schedule = () => {
 	const [curSchedule, setCurSchedule] = useState(scheduleData[0]);
+	const isMobile = useWindowWidth() <= 768;
+
 	// onClick={() => setCurSchedule(...)}
 	// when use {curSchedule}
-	return (
-		<Container>
-			<ScheduleLogoStyle>
-				<ScheduleTitle />
-			</ScheduleLogoStyle>
+	if (isMobile) {
+		return (
+			<ContainerMobile>
+				<ScheduleLogoMobileStyle>
+					<ScheduleTitle />
+				</ScheduleLogoMobileStyle>
+				<ScheduleBodyContainerMobile>
+					<ScheduleBodyTopCol>
+						<DayText style={{ width: '4.2em' }} onClick={() => setCurSchedule(scheduleData[0])}>
+							{curSchedule.date === 'Nov1' ? <FriBar /> : <FriNoBar />}
+						</DayText>
+						<DayText style={{ width: '6em' }} onClick={() => setCurSchedule(scheduleData[1])}>
+							{curSchedule.date === 'Nov2' ? <SatBar /> : <SatNoBar />}
+						</DayText>
+						<DayText style={{ width: '5em' }} onClick={() => setCurSchedule(scheduleData[2])}>
+							{curSchedule.date === 'Nov3' ? <SunBar /> : <SunNoBar />}
+						</DayText>
+					</ScheduleBodyTopCol>
 
-			<ScheduleBodyContainer>
-				<ScheduleBodyTopCol>
-					<DayText onClick={() => setCurSchedule(scheduleData[0])}>Friday Nov 1</DayText>
-					<DayText onClick={() => setCurSchedule(scheduleData[1])}>Saturday Nov 2</DayText>
-					<DayText onClick={() => setCurSchedule(scheduleData[2])}>Sunday Nov 3</DayText>
-				</ScheduleBodyTopCol>
+					<ScheduleBodyTimeCol>
+						{curSchedule.schedule.map(({ time }) => (
+							<TimeText>{time}</TimeText>
+						))}
+					</ScheduleBodyTimeCol>
 
-				<ScheduleBarCol>
-					{curSchedule.date === 'Nov1' ? <DisplayedBar /> : <HiddenBar />}
-					{curSchedule.date === 'Nov2' ? <DisplayedBar /> : <HiddenBar />}
-					{curSchedule.date === 'Nov3' ? <DisplayedBar /> : <HiddenBar />}
-				</ScheduleBarCol>
+					<ScheduleBodyDescriptionCol>
+						{curSchedule.schedule.map(({ event }) => (
+							<EventText>{event}</EventText>
+						))}
+					</ScheduleBodyDescriptionCol>
+				</ScheduleBodyContainerMobile>
+			</ContainerMobile>
+		);
+	} else {
+		return (
+			<Container>
+				<ScheduleLogoStyle>
+					<ScheduleTitle />
+				</ScheduleLogoStyle>
 
-				<ScheduleBodyTimeCol>
-					{curSchedule.schedule.map(({ time }) => (
-						<TimeText>{time}</TimeText>
-					))}
-				</ScheduleBodyTimeCol>
+				<ScheduleBodyContainer>
+					<ScheduleBodyTopCol>
+						<DayText style={{ width: '5.2em' }} onClick={() => setCurSchedule(scheduleData[0])}>
+							{curSchedule.date === 'Nov1' ? <FriBar /> : <FriNoBar />}
+						</DayText>
+						<DayText style={{ width: '7.2em' }} onClick={() => setCurSchedule(scheduleData[1])}>
+							{curSchedule.date === 'Nov2' ? <SatBar /> : <SatNoBar />}
+						</DayText>
+						<DayText style={{ width: '6.2em' }} onClick={() => setCurSchedule(scheduleData[2])}>
+							{curSchedule.date === 'Nov3' ? <SunBar /> : <SunNoBar />}
+						</DayText>
+					</ScheduleBodyTopCol>
 
-				<ScheduleBodyDescriptionCol>
-					{curSchedule.schedule.map(({ event }) => (
-						<EventText>{event}</EventText>
-					))}
-				</ScheduleBodyDescriptionCol>
-			</ScheduleBodyContainer>
+					<ScheduleBodyTimeCol>
+						{curSchedule.schedule.map(({ time }) => (
+							<TimeText>{time}</TimeText>
+						))}
+					</ScheduleBodyTimeCol>
 
-			<BoxStyle>
-				<Box />
-			</BoxStyle>
+					<ScheduleBodyDescriptionCol>
+						{curSchedule.schedule.map(({ event }) => (
+							<EventText>{event}</EventText>
+						))}
+					</ScheduleBodyDescriptionCol>
+				</ScheduleBodyContainer>
 
-			<Box2Style>
-				<Box2 />
-			</Box2Style>
-			<PenStyle>
-				<Pen />
-			</PenStyle>
-		</Container>
-	);
+				<BoxStyle>
+					<Box />
+				</BoxStyle>
+
+				<Box2Style>
+					<Box2 />
+				</Box2Style>
+				<PenStyle>
+					<Pen />
+				</PenStyle>
+			</Container>
+		);
+	}
 };
 
 const ScheduleAnimated = () => (
