@@ -39,7 +39,7 @@ const LogoGridStyleMobile = styled.div`
 	right: 0;
 	margin-left: auto;
 	margin-right: auto;
-	width: 120%;
+	width: 100%;
 	opacity: 1;
 	z-index: -1;
 `;
