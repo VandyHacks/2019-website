@@ -13,15 +13,19 @@ import LocationDateText from '../images/locationDateText.svg';
 import useWindowWidth from './utils/useWindowWidth.js';
 
 const Container = styled.div`
+	position: relative;
 	width: 76%;
 	text-align: center;
 	margin: 10em auto;
+	min-height: calc(100vh - 10em);
 `;
 
 const ContainerMobile = styled.div`
+	position: relative;
 	width: 100%;
 	text-align: center;
 	margin-top: 2em;
+	min-height: calc(101vh - 10em);
 `;
 
 const LogoGridStyle = styled.div`

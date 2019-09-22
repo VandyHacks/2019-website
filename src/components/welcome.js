@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { isFirefox } from 'react-device-detect';
 
 import InViewMonitor from 'react-inview-monitor';
 import useWindowWidth from './utils/useWindowWidth';
@@ -13,8 +14,8 @@ import LowerBar from '../images/faqLowerBar.svg';
 
 const Container = styled.div`
 	width: 100%;
-	margin-top: 15em;
-	margin-botton: 0em;
+	/* margin-top: 15em; */
+	margin-bottom: 0em;
 `;
 
 const WelcomeLogoStyle = styled.div`
@@ -160,13 +161,21 @@ const Welcome = () => {
 					<WelcomeBorder />
 					<WelcomeTextStyle>{welcomeText}</WelcomeTextStyle>
 					<WelcomeTextStyle
-						style={{ fontWeight: 'bold', lineHeight: '0', letterSpacing: '-0.055em' }}
+						style={{
+							fontWeight: 'bold',
+							lineHeight: '0',
+							letterSpacing: isFirefox ? '-0.055em' : 'unset',
+						}}
 					>
 						{welcomeBoldPresent}
 					</WelcomeTextStyle>
 					<WelcomeTextStyle>{welcomeTextCont}</WelcomeTextStyle>
 					<WelcomeTextStyle
-						style={{ fontWeight: 'bold', lineHeight: '0', letterSpacing: '-0.055em' }}
+						style={{
+							fontWeight: 'bold',
+							lineHeight: '0',
+							letterSpacing: isFirefox ? '-0.055em' : 'unset',
+						}}
 					>
 						{welcomeBoldCode}
 					</WelcomeTextStyle>
