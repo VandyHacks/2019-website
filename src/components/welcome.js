@@ -120,76 +120,70 @@ const welcomeTextCont =
 	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to';
 const welcomeBoldCode = ' Code a Masterpiece.';
 
-const Welcome = () => {
-	const isMobile = useWindowWidth() <= 768;
-	if (isMobile) {
-		return (
-			<Container>
-				<WelcomeLogoMobileStyle>
-					<WelcomeTitle />
-				</WelcomeLogoMobileStyle>
+const WelcomeMobile = () => (
+	<Container>
+		<WelcomeLogoMobileStyle>
+			<WelcomeTitle />
+		</WelcomeLogoMobileStyle>
 
-				<WelcomeBoxMobileStyle>
-					<WelcomeTextMobileStyle>{welcomeText}</WelcomeTextMobileStyle>
-					<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0', width:'100%' }}>
-						{welcomeBoldPresent}
-					</WelcomeTextMobileStyle>
-					<WelcomeTextMobileStyle>{welcomeTextCont}</WelcomeTextMobileStyle>
-					<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
-						{welcomeBoldCode}
-					</WelcomeTextMobileStyle>
+		<WelcomeBoxMobileStyle>
+			<WelcomeTextMobileStyle>{welcomeText}</WelcomeTextMobileStyle>
+			<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0', width: '100%' }}>
+				{welcomeBoldPresent}
+			</WelcomeTextMobileStyle>
+			<WelcomeTextMobileStyle>{welcomeTextCont}</WelcomeTextMobileStyle>
+			<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+				{welcomeBoldCode}
+			</WelcomeTextMobileStyle>
 
-					<LowerBarStyle>
-						<LowerBar />
-					</LowerBarStyle>
-				</WelcomeBoxMobileStyle>
+			<LowerBarStyle>
+				<LowerBar />
+			</LowerBarStyle>
+		</WelcomeBoxMobileStyle>
 
-				<Pen3MobileStyle>
-					<Pen3 />
-				</Pen3MobileStyle>
-			</Container>
-		);
-	} else {
-		return (
-			<Container>
-				<WelcomeLogoStyle>
-					<WelcomeTitle />
-				</WelcomeLogoStyle>
+		<Pen3MobileStyle>
+			<Pen3 />
+		</Pen3MobileStyle>
+	</Container>
+);
 
-				<WelcomeBoxStyle>
-					<WelcomeBorder />
-					<WelcomeTextStyle>{welcomeText}</WelcomeTextStyle>
-					<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
-						{welcomeBoldPresent}
-					</WelcomeTextStyle>
-					<WelcomeTextStyle>{welcomeTextCont}</WelcomeTextStyle>
-					<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
-						{welcomeBoldCode}
-					</WelcomeTextStyle>
-				</WelcomeBoxStyle>
+const Welcome = () => (
+	<Container>
+		<WelcomeLogoStyle>
+			<WelcomeTitle />
+		</WelcomeLogoStyle>
 
-				<EraserStyle>
-					<Eraser />
-				</EraserStyle>
-				<Pen2Style>
-					<Pen2 />
-				</Pen2Style>
+		<WelcomeBoxStyle>
+			<WelcomeBorder />
+			<WelcomeTextStyle>{welcomeText}</WelcomeTextStyle>
+			<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+				{welcomeBoldPresent}
+			</WelcomeTextStyle>
+			<WelcomeTextStyle>{welcomeTextCont}</WelcomeTextStyle>
+			<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+				{welcomeBoldCode}
+			</WelcomeTextStyle>
+		</WelcomeBoxStyle>
 
-				<Pen3Style>
-					<Pen3 />
-				</Pen3Style>
-			</Container>
-		);
-	}
-};
+		<EraserStyle>
+			<Eraser />
+		</EraserStyle>
+		<Pen2Style>
+			<Pen2 />
+		</Pen2Style>
 
-const WelcomeAnimated = () => (
+		<Pen3Style>
+			<Pen3 />
+		</Pen3Style>
+	</Container>
+);
+
+const WelcomeAnimated = ({ isMobile }) => (
 	<InViewMonitor
 		classNameNotInView="vis-hidden"
 		classNameInView="animated fadeInUp" // fadeInLeft, or fadeInRight
 	>
-		<Welcome />
+		{isMobile ? <WelcomeMobile /> : <Welcome />}
 	</InViewMonitor>
 );
-
 export default WelcomeAnimated;

@@ -4,13 +4,10 @@ import styled from 'styled-components';
 import InViewMonitor from 'react-inview-monitor';
 import MtSvgLines from 'react-mt-svg-lines';
 
-import '../../node_modules/animate.css/animate.min.css';
-
 import LogoOnly from '../images/logoOnly.svg';
 import LogoVandyHacksText from '../images/textVandyHacks.svg';
 import Grid from '../images/gridLogo.svg';
 import LocationDateText from '../images/locationDateText.svg';
-import useWindowWidth from './utils/useWindowWidth.js';
 
 const ContainerMobile = styled.div`
 	width: 100%;
@@ -118,50 +115,48 @@ const ScrollAnimateInLineSvg = ({ SvgElement }) => (
 	</InViewMonitor>
 );
 
-const BigLogoWithGrid = () => {
-	const isMobile = useWindowWidth() <= 768;
-	if (isMobile) {
-		return (
-			<ContainerMobile>
-				<LogoOnlyStyleMobile>
-					<LogoOnly />
-				</LogoOnlyStyleMobile>
+const BigLogoWithGrid = () => (
+	<Container>
+		<LogoOnlyStyle>
+			<LogoOnly />
+		</LogoOnlyStyle>
 
-				<LogoVandyHacksTextStyleMobile>
-					<LogoVandyHacksText />
-				</LogoVandyHacksTextStyleMobile>
+		<LogoVandyHacksTextStyle>
+			<LogoVandyHacksText />
+		</LogoVandyHacksTextStyle>
 
-				<LocationDateTextStyleMobile>
-					<LocationDateText />
-				</LocationDateTextStyleMobile>
+		<LocationDateTextStyle>
+			<LocationDateText />
+		</LocationDateTextStyle>
 
-				<LogoGridStyleMobile>
-					<Grid />
-				</LogoGridStyleMobile>
-			</ContainerMobile>
-		);
-	} else
-		return (
-			<Container>
-				<LogoOnlyStyle>
-					<LogoOnly />
-				</LogoOnlyStyle>
+		<LogoGridStyle>
+			<Grid />
+		</LogoGridStyle>
+	</Container>
+);
 
-				<LogoVandyHacksTextStyle>
-					<LogoVandyHacksText />
-				</LogoVandyHacksTextStyle>
+const BigLogoWithGridMobile = () => (
+	<ContainerMobile>
+		<LogoOnlyStyleMobile>
+			<LogoOnly />
+		</LogoOnlyStyleMobile>
 
-				<LocationDateTextStyle>
-					<LocationDateText />
-				</LocationDateTextStyle>
+		<LogoVandyHacksTextStyleMobile>
+			<LogoVandyHacksText />
+		</LogoVandyHacksTextStyleMobile>
 
-				<LogoGridStyle>
-					<Grid />
-				</LogoGridStyle>
-			</Container>
-		);
-};
+		<LocationDateTextStyleMobile>
+			<LocationDateText />
+		</LocationDateTextStyleMobile>
 
-const BigLogoWithGridAnimated = () => <ScrollAnimateInLineSvg SvgElement={<BigLogoWithGrid />} />;
+		<LogoGridStyleMobile>
+			<Grid />
+		</LogoGridStyleMobile>
+	</ContainerMobile>
+);
+
+const BigLogoWithGridAnimated = ({ isMobile }) => (
+	<ScrollAnimateInLineSvg SvgElement={isMobile ? <BigLogoWithGridMobile /> : <BigLogoWithGrid />} />
+);
 
 export default BigLogoWithGridAnimated;

@@ -177,54 +177,48 @@ const left = FAQText.filter((question, i) => !(i % 2));
 const right = FAQText.filter((question, i) => i % 2);
 // 19 in total
 
-const FAQ = () => {
-	const isMobile = useWindowWidth() <= 768;
-	if (isMobile) {
-		return (
-			<Container>
-				<Pen2MobileStyle>
-					<Pen2 />
-				</Pen2MobileStyle>
-				<FAQLogoMobileStyle>
-					<FAQTitle />
-				</FAQLogoMobileStyle>
+const FAQMobile = () => (
+	<Container>
+		<Pen2MobileStyle>
+			<Pen2 />
+		</Pen2MobileStyle>
+		<FAQLogoMobileStyle>
+			<FAQTitle />
+		</FAQLogoMobileStyle>
 
-				<TextBodyMobile>
-					<Column questions={FAQText} />
-				</TextBodyMobile>
-			</Container>
-		);
-	} else {
-		return (
-			<Container>
-				<FAQLogoStyle>
-					<FAQTitle />
-				</FAQLogoStyle>
+		<TextBodyMobile>
+			<Column questions={FAQText} />
+		</TextBodyMobile>
+	</Container>
+);
 
-				<FAQUpperBarStyle>
-					<FAQUpperBar />
-				</FAQUpperBarStyle>
+const FAQ = () => (
+	<Container>
+		<FAQLogoStyle>
+			<FAQTitle />
+		</FAQLogoStyle>
 
-				<TextBody>
-					<Column questions={left} />
-					<Column questions={right} />
-				</TextBody>
+		<FAQUpperBarStyle>
+			<FAQUpperBar />
+		</FAQUpperBarStyle>
 
-				<FAQLowerBarStyle>
-					<FAQLowerBar />
-				</FAQLowerBarStyle>
-			</Container>
-		);
-	}
-};
+		<TextBody>
+			<Column questions={left} />
+			<Column questions={right} />
+		</TextBody>
 
-const FAQAnimated = () => (
+		<FAQLowerBarStyle>
+			<FAQLowerBar />
+		</FAQLowerBarStyle>
+	</Container>
+);
+
+const FAQAnimated = ({ isMobile }) => (
 	<InViewMonitor
 		classNameNotInView="vis-hidden"
 		classNameInView="animated fadeInRight" // fadeInLeft, or fadeInRight
 	>
-		<FAQ />
+		{isMobile ? <FAQMobile /> : <FAQ />}
 	</InViewMonitor>
 );
-
 export default FAQAnimated;

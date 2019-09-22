@@ -30,7 +30,7 @@ const SponsorTitleStyleMobile = styled.div`
 
 const SponsorBorderStyleMobile = styled.div`
 	width: 100%;
-	margin-top: -.5em;
+	margin-top: -0.5em;
 `;
 
 const LogoGridStyleMobile = styled.div`
@@ -44,39 +44,35 @@ const LogoGridStyleMobile = styled.div`
 	z-index: -1;
 `;
 
-// see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
-const SponsorBox = () => {
-	const isMobile = useWindowWidth() <= 768;
-	if(isMobile) {
-	return (
-		<Container>
-			<SponsorTitleStyleMobile>
-				<SponsorTitle />
-			</SponsorTitleStyleMobile>
-			<LogoGridStyleMobile >
-				<Grid />
-			</LogoGridStyleMobile>
-		</Container>
-	);
-	} else
-	return (
-		<Container>
-			<SponsorTitleStyle>
-				<SponsorTitle />
-			</SponsorTitleStyle>
-			<SponsorBorderStyle>
-				<SponsorBorder />
-			</SponsorBorderStyle>
-		</Container>
-	);
-};
+const SponsorBoxMobile = () => (
+	<Container>
+		<SponsorTitleStyleMobile>
+			<SponsorTitle />
+		</SponsorTitleStyleMobile>
+		<LogoGridStyleMobile>
+			<Grid />
+		</LogoGridStyleMobile>
+	</Container>
+);
 
-const SponsorBoxAnimated = () => (
+// see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
+const SponsorBox = () => (
+	<Container>
+		<SponsorTitleStyle>
+			<SponsorTitle />
+		</SponsorTitleStyle>
+		<SponsorBorderStyle>
+			<SponsorBorder />
+		</SponsorBorderStyle>
+	</Container>
+);
+
+const SponsorBoxAnimated = ({ isMobile }) => (
 	<InViewMonitor
 		classNameNotInView="vis-hidden"
 		classNameInView="animated fadeInUp" // fadeInLeft, or fadeInRight
 	>
-		<SponsorBox />
+		{isMobile ? <SponsorBoxMobile /> : <SponsorBox />}
 	</InViewMonitor>
 );
 
