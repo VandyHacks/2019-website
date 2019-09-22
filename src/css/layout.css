@@ -617,3 +617,6 @@ pre tt:before,
 pre tt:after {
 	content: '';
 }
+.vis-hidden {
+	visibility: hidden;
+  }
