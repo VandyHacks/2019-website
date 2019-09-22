@@ -207,7 +207,6 @@ const Schedule = () => {
 	if (isMobile) {
 		return (
 			<ContainerMobile>
-
 				<Box2StyleMobile>
 					<Box2 />
 				</Box2StyleMobile>

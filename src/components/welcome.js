@@ -131,7 +131,7 @@ const Welcome = () => {
 
 				<WelcomeBoxMobileStyle>
 					<WelcomeTextMobileStyle>{welcomeText}</WelcomeTextMobileStyle>
-					<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0', width:'100%' }}>
+					<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0', width: '100%' }}>
 						{welcomeBoldPresent}
 					</WelcomeTextMobileStyle>
 					<WelcomeTextMobileStyle>{welcomeTextCont}</WelcomeTextMobileStyle>
