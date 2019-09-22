@@ -178,8 +178,8 @@ const right = FAQText.filter((question, i) => i % 2);
 // 19 in total
 
 const FAQ = () => {
-	const notMobile = useWindowWidth() > 768;
-	if (!notMobile) {
+	const isMobile = useWindowWidth() <= 768;
+	if (isMobile) {
 		return (
 			<Container>
 				<Pen2MobileStyle>
