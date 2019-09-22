@@ -121,8 +121,8 @@ const welcomeTextCont =
 const welcomeBoldCode = ' Code a Masterpiece.';
 
 const Welcome = () => {
-	const isMobile = useWindowWidth() <= 768;
-	if (isMobile) {
+	const notMobile = useWindowWidth() > 768;
+	if (!notMobile) {
 		return (
 			<Container>
 				<WelcomeLogoMobileStyle>

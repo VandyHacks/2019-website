@@ -20,12 +20,12 @@ const ColumnContainerMobile = styled.div`
 
 const Column = ({ questions }) => {
 	const [openedIndex, setOpened] = useState(0);
-	const isMobile = useWindowWidth() <= 768;
+	const notMobile = useWindowWidth() > 768;
 
 	const onQuestionClicked = index => {
 		setOpened(openedIndex === index ? -1 : index);
 	};
-	if (isMobile) {
+	if (!notMobile) {
 		return (
 			<ColumnContainerMobile>
 				{questions.map(({ question, answer }, i) => (

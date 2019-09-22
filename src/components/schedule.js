@@ -200,14 +200,13 @@ const scheduleData = [
 
 const Schedule = () => {
 	const [curSchedule, setCurSchedule] = useState(scheduleData[0]);
-	const isMobile = useWindowWidth() <= 768;
+	const notMobile = useWindowWidth() > 768;
 
 	// onClick={() => setCurSchedule(...)}
 	// when use {curSchedule}
-	if (isMobile) {
+	if (!notMobile) {
 		return (
 			<ContainerMobile>
-
 				<Box2StyleMobile>
 					<Box2 />
 				</Box2StyleMobile>
