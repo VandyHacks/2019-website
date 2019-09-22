@@ -1,5 +1,6 @@
 import React from 'react';
 // import { Link } from 'gatsby';
+// try build again before i push it
 import styled from 'styled-components';
 
 import '../../node_modules/animate.css/animate.min.css';
