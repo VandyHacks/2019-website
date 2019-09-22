@@ -12,28 +12,16 @@ import Grid from '../images/gridLogo.svg';
 import LocationDateText from '../images/locationDateText.svg';
 import useWindowWidth from './utils/useWindowWidth.js';
 
-const Container = styled.div`
-	width: 76%;
-	text-align: center;
-	margin: 10em auto;
-`;
-
 const ContainerMobile = styled.div`
 	width: 100%;
 	text-align: center;
 	margin-top: 2em;
 `;
 
-const LogoGridStyle = styled.div`
-	position: absolute;
-	top: 14em;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
-	width: 60%;
-	opacity: 1;
-	z-index: -1;
+const Container = styled.div`
+	width: 76%;
+	text-align: center;
+	margin: 10em auto;
 `;
 
 const LogoGridStyleMobile = styled.div`
@@ -48,12 +36,16 @@ const LogoGridStyleMobile = styled.div`
 	z-index: -1;
 `;
 
-const LogoOnlyStyle = styled.div`
-	display: inline-block;
-	width: 30%;
-	justify-content: center;
-	fill-opacity: 1;
-	z-index: 2;
+const LogoGridStyle = styled.div`
+	position: absolute;
+	top: 14em;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+	opacity: 1;
+	z-index: -1;
 `;
 
 const LogoOnlyStyleMobile = styled.div`
@@ -64,14 +56,10 @@ const LogoOnlyStyleMobile = styled.div`
 	z-index: 2;
 `;
 
-const LogoVandyHacksTextStyle = styled.div`
-	width: 30em;
-	margin: 1.5em auto 0.3em auto;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
-	fill: white;
+const LogoOnlyStyle = styled.div`
+	display: inline-block;
+	width: 30%;
+	justify-content: center;
 	fill-opacity: 1;
 	z-index: 2;
 `;
@@ -88,8 +76,20 @@ const LogoVandyHacksTextStyleMobile = styled.div`
 	z-index: 2;
 `;
 
-const LocationDateTextStyle = styled.div`
-	width: 20em;
+const LogoVandyHacksTextStyle = styled.div`
+	width: 30em;
+	margin: 1.5em auto 0.3em auto;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	fill: white;
+	fill-opacity: 1;
+	z-index: 2;
+`;
+
+const LocationDateTextStyleMobile = styled.div`
+	width: auto;
 	margin: 0.6em auto;
 	left: 0;
 	right: 0;
@@ -97,8 +97,8 @@ const LocationDateTextStyle = styled.div`
 	margin-right: auto;
 `;
 
-const LocationDateTextStyleMobile = styled.div`
-	width: auto;
+const LocationDateTextStyle = styled.div`
+	width: 20em;
 	margin: 0.6em auto;
 	left: 0;
 	right: 0;
@@ -120,47 +120,46 @@ const ScrollAnimateInLineSvg = ({ SvgElement }) => (
 
 const BigLogoWithGrid = () => {
 	const isMobile = useWindowWidth() <= 768;
-	if(isMobile) {
+	if (isMobile) {
 		return (
 			<ContainerMobile>
 				<LogoOnlyStyleMobile>
 					<LogoOnly />
 				</LogoOnlyStyleMobile>
-		
+
 				<LogoVandyHacksTextStyleMobile>
 					<LogoVandyHacksText />
 				</LogoVandyHacksTextStyleMobile>
-		
+
 				<LocationDateTextStyleMobile>
 					<LocationDateText />
 				</LocationDateTextStyleMobile>
-		
-				<LogoGridStyleMobile className="fadeIn">
+
+				<LogoGridStyleMobile>
 					<Grid />
 				</LogoGridStyleMobile>
-
 			</ContainerMobile>
-		)
+		);
 	} else
-	return (
-	<Container>
-		<LogoOnlyStyle>
-			<LogoOnly />
-		</LogoOnlyStyle>
+		return (
+			<Container>
+				<LogoOnlyStyle>
+					<LogoOnly />
+				</LogoOnlyStyle>
 
-		<LogoVandyHacksTextStyle>
-			<LogoVandyHacksText />
-		</LogoVandyHacksTextStyle>
+				<LogoVandyHacksTextStyle>
+					<LogoVandyHacksText />
+				</LogoVandyHacksTextStyle>
 
-		<LocationDateTextStyle>
-			<LocationDateText />
-		</LocationDateTextStyle>
+				<LocationDateTextStyle>
+					<LocationDateText />
+				</LocationDateTextStyle>
 
-		<LogoGridStyle className="fadeIn">
-			<Grid />
-		</LogoGridStyle>
-	</Container>
-	)
+				<LogoGridStyle>
+					<Grid />
+				</LogoGridStyle>
+			</Container>
+		);
 };
 
 const BigLogoWithGridAnimated = () => <ScrollAnimateInLineSvg SvgElement={<BigLogoWithGrid />} />;
