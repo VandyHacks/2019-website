@@ -27,12 +27,17 @@ module.exports = {
 				icon: `src/images/facicon.ico`, // This path is relative to the root of the site.
 			},
 		},
-		'gatsby-plugin-styled-components',
+		{
+			resolve: `gatsby-plugin-styled-components`,
+			options: {
+				ssr: true,
+			},
+		},
 		{
 			resolve: 'gatsby-plugin-react-svg',
 			options: {
 				rule: {
-					include: /images/,
+          include: /images/,
 				},
 			},
 		},

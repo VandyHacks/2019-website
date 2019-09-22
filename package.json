@@ -54,7 +54,8 @@
     "lint:fix": "npm run lint -- --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "info": "gatsby info --clipboard"
   },
   "repository": {
     "type": "git",
