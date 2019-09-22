@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 
 import InViewMonitor from 'react-inview-monitor';
 import useWindowWidth from './utils/useWindowWidth';
@@ -121,7 +122,7 @@ const welcomeTextCont =
 const welcomeBoldCode = ' Code a Masterpiece.';
 
 const Welcome = () => {
-	const isMobile = useWindowWidth() <= 768;
+	// const isMobile = useWindowWidth() <= 768;
 	if (isMobile) {
 		return (
 			<Container>
