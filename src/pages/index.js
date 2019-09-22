@@ -29,9 +29,10 @@ const IndexPage = () => {
 			<FAQAnimated isMobile={isMobile}/>
 			<ScheduleAnimated isMobile={isMobile}/>
 			<SponsorBoxAnimated isMobile={isMobile}/>
-			<InvertButton/>
+			<InvertButton />
 		</Container>
 	);
 };
+
 
 export default IndexPage;

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const ButtonStyle = styled.div`
     position: absolute;
-    margin-top: 1em;
+    margin-top: 1em; 
 `;
 
 function invertColors()
