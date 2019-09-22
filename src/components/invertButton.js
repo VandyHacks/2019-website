@@ -8,9 +8,20 @@ const ButtonStyle = styled.div`
     margin-top: 1em; 
 `;
 
+var IsInvert = false;
+
 function invertColors()
 {
-	document.body.style = 'background: black; filter: invert(95%);';
+    if (!IsInvert)
+    {
+        document.body.style = 'background: black; filter: invert(95%);';
+        IsInvert = true;
+    }
+    else
+    {
+        document.body.style = 'background: white; filter: invert(0%)';
+        IsInvert = false;
+    }
 } 
 
 const InvertButton = () => ( 
