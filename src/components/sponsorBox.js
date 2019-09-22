@@ -44,9 +44,10 @@ const LogoGridStyleMobile = styled.div`
 	z-index: -1;
 `;
 
+const isMobile = useWindowWidth() <= 768;
+
 // see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
 const SponsorBox = () => {
-	const isMobile = useWindowWidth() <= 768;
 	if(isMobile) {
 	return (
 		<Container>

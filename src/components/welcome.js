@@ -120,8 +120,9 @@ const welcomeTextCont =
 	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to';
 const welcomeBoldCode = ' Code a Masterpiece.';
 
+const isMobile = useWindowWidth() <= 768;
+
 const Welcome = () => {
-	const isMobile = useWindowWidth() <= 768;
 	if (isMobile) {
 		return (
 			<Container>

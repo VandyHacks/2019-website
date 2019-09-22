@@ -18,9 +18,10 @@ const ColumnContainerMobile = styled.div`
 	width: 100%;
 `;
 
+const isMobile = useWindowWidth() <= 768;
+
 const Column = ({ questions }) => {
 	const [openedIndex, setOpened] = useState(0);
-	const isMobile = useWindowWidth() <= 768;
 
 	const onQuestionClicked = index => {
 		setOpened(openedIndex === index ? -1 : index);
