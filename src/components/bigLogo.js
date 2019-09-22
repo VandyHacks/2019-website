@@ -118,49 +118,49 @@ const ScrollAnimateInLineSvg = ({ SvgElement }) => (
 	</InViewMonitor>
 );
 
-const isMobile = useWindowWidth() <= 768;
-
 const BigLogoWithGrid = () => {
-	if (isMobile) {
+	const isMobile = useWindowWidth() <= 768;
+	if(isMobile) {
 		return (
 			<ContainerMobile>
 				<LogoOnlyStyleMobile>
 					<LogoOnly />
 				</LogoOnlyStyleMobile>
-
+		
 				<LogoVandyHacksTextStyleMobile>
 					<LogoVandyHacksText />
 				</LogoVandyHacksTextStyleMobile>
-
+		
 				<LocationDateTextStyleMobile>
 					<LocationDateText />
 				</LocationDateTextStyleMobile>
-
+		
 				<LogoGridStyleMobile className="fadeIn">
 					<Grid />
 				</LogoGridStyleMobile>
+
 			</ContainerMobile>
-		);
+		)
 	} else
-		return (
-			<Container>
-				<LogoOnlyStyle>
-					<LogoOnly />
-				</LogoOnlyStyle>
+	return (
+	<Container>
+		<LogoOnlyStyle>
+			<LogoOnly />
+		</LogoOnlyStyle>
 
-				<LogoVandyHacksTextStyle>
-					<LogoVandyHacksText />
-				</LogoVandyHacksTextStyle>
+		<LogoVandyHacksTextStyle>
+			<LogoVandyHacksText />
+		</LogoVandyHacksTextStyle>
 
-				<LocationDateTextStyle>
-					<LocationDateText />
-				</LocationDateTextStyle>
+		<LocationDateTextStyle>
+			<LocationDateText />
+		</LocationDateTextStyle>
 
-				<LogoGridStyle className="fadeIn">
-					<Grid />
-				</LogoGridStyle>
-			</Container>
-		);
+		<LogoGridStyle className="fadeIn">
+			<Grid />
+		</LogoGridStyle>
+	</Container>
+	)
 };
 
 const BigLogoWithGridAnimated = () => <ScrollAnimateInLineSvg SvgElement={<BigLogoWithGrid />} />;
