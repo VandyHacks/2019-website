@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { isMobile } from 'react-device-detect';
 
 import InViewMonitor from 'react-inview-monitor';
 import MtSvgLines from 'react-mt-svg-lines';
@@ -120,47 +119,48 @@ const ScrollAnimateInLineSvg = ({ SvgElement }) => (
 );
 
 const BigLogoWithGrid = () => {
-	// const isMobile = useWindowWidth() <= 768;
-	if (isMobile) {
+	const isMobile = useWindowWidth() <= 768;
+	if(isMobile) {
 		return (
 			<ContainerMobile>
 				<LogoOnlyStyleMobile>
 					<LogoOnly />
 				</LogoOnlyStyleMobile>
-
+		
 				<LogoVandyHacksTextStyleMobile>
 					<LogoVandyHacksText />
 				</LogoVandyHacksTextStyleMobile>
-
+		
 				<LocationDateTextStyleMobile>
 					<LocationDateText />
 				</LocationDateTextStyleMobile>
-
+		
 				<LogoGridStyleMobile className="fadeIn">
 					<Grid />
 				</LogoGridStyleMobile>
+
 			</ContainerMobile>
-		);
+		)
 	} else
-		return (
-			<Container>
-				<LogoOnlyStyle>
-					<LogoOnly />
-				</LogoOnlyStyle>
+	return (
+	<Container>
+		<LogoOnlyStyle>
+			<LogoOnly />
+		</LogoOnlyStyle>
 
-				<LogoVandyHacksTextStyle>
-					<LogoVandyHacksText />
-				</LogoVandyHacksTextStyle>
+		<LogoVandyHacksTextStyle>
+			<LogoVandyHacksText />
+		</LogoVandyHacksTextStyle>
 
-				<LocationDateTextStyle>
-					<LocationDateText />
-				</LocationDateTextStyle>
+		<LocationDateTextStyle>
+			<LocationDateText />
+		</LocationDateTextStyle>
 
-				<LogoGridStyle className="fadeIn">
-					<Grid />
-				</LogoGridStyle>
-			</Container>
-		);
+		<LogoGridStyle className="fadeIn">
+			<Grid />
+		</LogoGridStyle>
+	</Container>
+	)
 };
 
 const BigLogoWithGridAnimated = () => <ScrollAnimateInLineSvg SvgElement={<BigLogoWithGrid />} />;

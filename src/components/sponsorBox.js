@@ -30,7 +30,7 @@ const SponsorTitleStyleMobile = styled.div`
 
 const SponsorBorderStyleMobile = styled.div`
 	width: 100%;
-	margin-top: -0.5em;
+	margin-top: -.5em;
 `;
 
 const LogoGridStyleMobile = styled.div`
@@ -47,28 +47,28 @@ const LogoGridStyleMobile = styled.div`
 // see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
 const SponsorBox = () => {
 	const isMobile = useWindowWidth() <= 768;
-	if (isMobile) {
-		return (
-			<Container>
-				<SponsorTitleStyleMobile>
-					<SponsorTitle />
-				</SponsorTitleStyleMobile>
-				<LogoGridStyleMobile>
-					<Grid />
-				</LogoGridStyleMobile>
-			</Container>
-		);
+	if(isMobile) {
+	return (
+		<Container>
+			<SponsorTitleStyleMobile>
+				<SponsorTitle />
+			</SponsorTitleStyleMobile>
+			<LogoGridStyleMobile >
+				<Grid />
+			</LogoGridStyleMobile>
+		</Container>
+	);
 	} else
-		return (
-			<Container>
-				<SponsorTitleStyle>
-					<SponsorTitle />
-				</SponsorTitleStyle>
-				<SponsorBorderStyle>
-					<SponsorBorder />
-				</SponsorBorderStyle>
-			</Container>
-		);
+	return (
+		<Container>
+			<SponsorTitleStyle>
+				<SponsorTitle />
+			</SponsorTitleStyle>
+			<SponsorBorderStyle>
+				<SponsorBorder />
+			</SponsorBorderStyle>
+		</Container>
+	);
 };
 
 const SponsorBoxAnimated = () => (
