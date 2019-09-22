@@ -159,11 +159,15 @@ const Welcome = () => {
 				<WelcomeBoxStyle>
 					<WelcomeBorder />
 					<WelcomeTextStyle>{welcomeText}</WelcomeTextStyle>
-					<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+					<WelcomeTextStyle
+						style={{ fontWeight: 'bold', lineHeight: '0', letterSpacing: '-0.055em' }}
+					>
 						{welcomeBoldPresent}
 					</WelcomeTextStyle>
 					<WelcomeTextStyle>{welcomeTextCont}</WelcomeTextStyle>
-					<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+					<WelcomeTextStyle
+						style={{ fontWeight: 'bold', lineHeight: '0', letterSpacing: '-0.055em' }}
+					>
 						{welcomeBoldCode}
 					</WelcomeTextStyle>
 				</WelcomeBoxStyle>
