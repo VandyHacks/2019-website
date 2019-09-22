@@ -11,7 +11,7 @@ import SponsorBoxAnimated from '../components/sponsorBox';
 import useWindowWidth from '../components/utils/useWindowWidth.js';
 
 import '../../node_modules/animate.css/animate.min.css';
-// import '../css/layout.css';
+import '../css/layout.css';
 
 const Container = styled.div`
 	width: 76%;
