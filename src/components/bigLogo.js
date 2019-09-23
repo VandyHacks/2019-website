@@ -137,6 +137,7 @@ const ApplyButton = styled.button`
 	&:focus {
 		background-color: hsl(228, 53%, 34%);
 		color: white;
+		cursor: pointer;
 	}
 
 	outline: none;

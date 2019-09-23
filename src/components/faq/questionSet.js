@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import useDimensions from 'react-use-dimensions';
 import Arrow from './arrow';
-
-import throttle from 'lodash.throttle';
 
 const QuestionSetContainer = styled.div`
 	margin-bottom: 25px;
@@ -31,6 +29,14 @@ const StyledQuestion = styled.h2`
 	font-size: 1.2em;
 	font-weight: lighter;
 	text-align: left;
+
+	&:hover,
+	&:focus {
+		color: #3048a1;
+		font-weight: normal;
+		letter-spacing: -0.04em;
+		cursor: pointer;
+	}
 `;
 
 const StyledAnswer = styled.p`
@@ -52,14 +58,6 @@ const getSplitText = (text, shouldOpen) => {
 			</NoWrapContainer>
 		</StyledQuestion>
 	);
-};
-
-const getHeight = id => {
-	if (typeof document !== 'undefined') {
-		// to make gatsby happy
-		const el = document.getElementById(id);
-		return el ? el.scrollHeight : 100;
-	}
 };
 
 const QuestionSet = ({ question, answer, shouldOpen, onClick }) => {

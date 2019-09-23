@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { isFirefox } from 'react-device-detect';
+import { isChrome } from 'react-device-detect';
 
 import InViewMonitor from 'react-inview-monitor';
 import isMobileContext from './isMobileContext';
@@ -115,7 +115,7 @@ const LowerBarStyle = styled.div`
 
 // place holder for text
 const welcomeText =
-	'VandyHacks is back this Fall in the Music City–and it’s ready to redesign hackathons.';
+	'VandyHacks is back this fall in Music City–and it’s ready to redesign hackathons.';
 const welcomeBoldPresent = 'Presenting VandyHacks VI: Art Edition.';
 const welcomeTextCont =
 	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to';
@@ -164,7 +164,7 @@ const Welcome = () => {
 						style={{
 							fontWeight: 'bold',
 							lineHeight: '0',
-							letterSpacing: isFirefox ? '-0.055em' : 'unset',
+							letterSpacing: !isChrome ? '-0.055em' : 'unset',
 						}}
 					>
 						{welcomeBoldPresent}
@@ -174,7 +174,7 @@ const Welcome = () => {
 						style={{
 							fontWeight: 'bold',
 							lineHeight: '0',
-							letterSpacing: isFirefox ? '-0.055em' : 'unset',
+							letterSpacing: !isChrome ? '-0.055em' : 'unset',
 						}}
 					>
 						{welcomeBoldCode}
