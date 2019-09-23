@@ -166,7 +166,7 @@ const FAQText = [
 	{
 		question: 'Will there be parking available for attendees?',
 		answer:
-			'Yes! Attendees will be able to find parking at the 25th Avenue Garage, conveniently located next to Vanderbilt’s Engineering and Science Building. You can find it',
+			'Yes! Attendees will be able to find parking at the 25th Avenue Garage, conveniently located next to Vanderbilt’s Engineering and Science Building.',
 	},
 	{
 		question: 'I have more questions!',
