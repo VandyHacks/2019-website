@@ -14,7 +14,7 @@ import '../../node_modules/animate.css/animate.min.css';
 import '../css/layout.css';
 
 const Container = styled.div`
-	width: 76%;
+	width: calc(100vw - 20em);
 	text-align: center;
 	margin: 10em auto;
 `;
