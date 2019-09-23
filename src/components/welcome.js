@@ -40,7 +40,7 @@ const WelcomeTextStyle = styled.p`
 	margin-left: 7em;
 `;
 
-const p = styled.p`
+const WelcomeTextStyleMobile = styled.p`
 	position: relative;
 	margin-left: 0.3em;
 	margin-right: 1em;
@@ -139,9 +139,9 @@ const WelcomeMobile = () => (
 				{welcomeBoldCode}
 			</p>
 
-			<LowerBarStyle>
+			<div className={'LowerBar'}>
 				<LowerBar />
-			</LowerBarStyle>
+			</div>
 		</div>
 
 		<div className={'Pen3Mobile'}>
@@ -152,32 +152,32 @@ const WelcomeMobile = () => (
 
 const Welcome = () => (
 	<Container>
-		<WelcomeLogoStyle>
+		<div className={'WelcomeLogo'}>
 			<WelcomeTitle />
-		</WelcomeLogoStyle>
+		</div>
 
-		<WelcomeBoxStyle>
+		<div className={'WelcomeBox'}>
 			<WelcomeBorder />
-			<WelcomeTextStyle>{welcomeText}</WelcomeTextStyle>
-			<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+			<p className={'WelcomeText'}>{welcomeText}</p>
+			<p className={'WelcomeText'} style={{ fontWeight: 'bold', lineHeight: '0' }}>
 				{welcomeBoldPresent}
-			</WelcomeTextStyle>
-			<WelcomeTextStyle>{welcomeTextCont}</WelcomeTextStyle>
-			<WelcomeTextStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+			</p>
+			<p className={'WelcomeText'}>{welcomeTextCont}</p>
+			<p className={'WelcomeText'} style={{ fontWeight: 'bold', lineHeight: '0' }}>
 				{welcomeBoldCode}
-			</WelcomeTextStyle>
-		</WelcomeBoxStyle>
+			</p>
+		</div>
 
-		<EraserStyle>
+		<div className={'Eraser'}>
 			<Eraser />
-		</EraserStyle>
-		<Pen2Style>
+		</div>
+		<div className={'Pen2'}>
 			<Pen2 />
-		</Pen2Style>
+		</div>
 
-		<Pen3Style>
+		<div className={'Pen3'}>
 			<Pen3 />
-		</Pen3Style>
+		</div>
 	</Container>
 );
 
