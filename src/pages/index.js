@@ -30,7 +30,7 @@ const IndexPage = () => {
 		window.addEventListener('resize', handleWindowResize);
 
 		// First resize
-		const timeout = setTimeout(() => {
+		const timeout = setInterval(() => {
 			handleWindowResize();
 		}, 250);
 
