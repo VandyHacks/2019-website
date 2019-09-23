@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { isFirefox } from 'react-device-detect';
 
 import InViewMonitor from 'react-inview-monitor';
-import useWindowWidth from './utils/useWindowWidth';
+import isMobileContext from './isMobileContext';
 
 import WelcomeTitle from '../images/welcomeText.svg';
 import WelcomeBorder from '../images/welcomeBorder.svg';
@@ -122,7 +122,7 @@ const welcomeTextCont =
 const welcomeBoldCode = ' Code a Masterpiece.';
 
 const Welcome = () => {
-	const isMobile = useWindowWidth() <= 768;
+	const isMobile = useContext(isMobileContext);
 	if (isMobile) {
 		return (
 			<Container>

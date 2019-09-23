@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
 
 import SponsorTitle from '../images/sponsorText.svg';
 import SponsorBorder from '../images/sponsorBorder.svg';
-import useWindowWidth from './utils/useWindowWidth.js';
+import isMobileContext from './isMobileContext';
 import UpperBorderBar from '../images/faqUpperBar.svg';
 import LowerBorderBar from '../images/faqLowerBar.svg';
 import Grid from '../images/gridLogo.svg';
@@ -46,7 +46,7 @@ const LogoGridStyleMobile = styled.div`
 
 // see https://github.com/VandyHacks/VHF2018-website/blob/master/components/Sponsors.vue
 const SponsorBox = () => {
-	const isMobile = useWindowWidth() <= 768;
+	const isMobile = useContext(isMobileContext);
 	if (isMobile) {
 		return (
 			<Container>

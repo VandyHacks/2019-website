@@ -14,11 +14,17 @@ const useWindowWidth = () => {
 	useEffect(() => {
 		window.addEventListener('resize', handleWindowResize);
 
+		setTimeout(() => {
+			handleWindowResize();
+			console.log('did the thing');
+		}, 1000);
+
 		return () => {
 			window.removeEventListener('resize', handleWindowResize);
 		};
-	}, [handleWindowResize]);
+	}, []);
 
+	console.log('returning ', width);
 	return width;
 };
 

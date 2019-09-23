@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 
 import QuestionSet from './questionSet';
-import useWindowWidth from '../utils/useWindowWidth';
+import isMobileContext from '../isMobileContext';
 
 // accepted props of a FAQ column (2 on desktop, 1 on mobile + tablet)
 
@@ -20,7 +20,7 @@ const ColumnContainerMobile = styled.div`
 
 const Column = ({ questions }) => {
 	const [openedIndex, setOpened] = useState(0);
-	const isMobile = useWindowWidth() <= 768;
+	const isMobile = useContext(isMobileContext);
 
 	const onQuestionClicked = index => {
 		setOpened(openedIndex === index ? -1 : index);

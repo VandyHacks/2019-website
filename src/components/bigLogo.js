@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { keyframes } from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
 import MtSvgLines from 'react-mt-svg-lines';
@@ -10,7 +10,16 @@ import LogoOnly from '../images/logoOnly.svg';
 import LogoVandyHacksText from '../images/textVandyHacks.svg';
 import Grid from '../images/gridLogo.svg';
 import LocationDateText from '../images/locationDateText.svg';
-import useWindowWidth from './utils/useWindowWidth.js';
+import isMobileContext from './isMobileContext';
+
+const fadeIn = keyframes`
+	from { 
+		opacity: 0;
+	}
+	to { 
+		opacity: 1;
+	}
+`;
 
 const Container = styled.div`
 	position: relative;
@@ -18,6 +27,7 @@ const Container = styled.div`
 	text-align: center;
 	margin: 10em auto;
 	min-height: calc(100vh - 10em);
+	animation: ${fadeIn} 1s linear;
 `;
 
 const ContainerMobile = styled.div`
@@ -26,6 +36,7 @@ const ContainerMobile = styled.div`
 	text-align: center;
 	margin-top: 2em;
 	min-height: calc(101vh - 10em);
+	animation: ${fadeIn} 1s linear;
 `;
 
 const LogoGridStyle = styled.div`
@@ -123,7 +134,7 @@ const ScrollAnimateInLineSvg = ({ SvgElement }) => (
 );
 
 const BigLogoWithGrid = () => {
-	const isMobile = useWindowWidth() <= 768;
+	const isMobile = useContext(isMobileContext);
 	if (isMobile) {
 		return (
 			<ContainerMobile>

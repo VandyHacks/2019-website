@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
-import useWindowWidth from './utils/useWindowWidth';
+import isMobileContext from './isMobileContext';
 
 import ScheduleTitle from '../images/scheduleText.svg';
 import Box from '../images/stationeryBox.svg';
@@ -50,7 +50,7 @@ const ScheduleLogoStyle = styled.div`
 const ScheduleLogoMobileStyle = styled.div`
 	width: 90%;
 	position: relative;
-	left 10%;
+	left: 10%;
 `;
 
 const BoxStyle = styled.div`
@@ -200,7 +200,7 @@ const scheduleData = [
 
 const Schedule = () => {
 	const [curSchedule, setCurSchedule] = useState(scheduleData[0]);
-	const isMobile = useWindowWidth() <= 768;
+	const isMobile = useContext(isMobileContext);
 
 	// onClick={() => setCurSchedule(...)}
 	// when use {curSchedule}

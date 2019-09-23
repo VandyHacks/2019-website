@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import InViewMonitor from 'react-inview-monitor';
@@ -9,7 +9,7 @@ import FAQLowerBar from '../../images/faqLowerBar.svg';
 import Pen2 from '../../images/stationeryPen2.svg';
 
 import Column from './column';
-import useWindowWidth from '../utils/useWindowWidth';
+import isMobileContext from '../isMobileContext';
 
 const Container = styled.div`
 	width: 100%;
@@ -178,7 +178,7 @@ const right = FAQText.filter((question, i) => i % 2);
 // 19 in total
 
 const FAQ = () => {
-	const isMobile = useWindowWidth() <= 768;
+	const isMobile = useContext(isMobileContext);
 	if (isMobile) {
 		return (
 			<Container>
