@@ -625,3 +625,27 @@ pre tt:after {
 .vis-hidden {
 	visibility: hidden;
   }
+
+.WelcomeTextMobile{
+	position: relative;
+	margin-left: 0.3em;
+	margin-right: 1em;
+	text-align: left;
+	font-size: 1em;
+	display: block;
+	line-height: 1.5em;
+	width: 17em;
+}
+.WelcomeBoxMobile{
+	position: relative;
+	width: 100%;
+	opacity: 1;
+	margin: 3em auto;
+}
+.Pen3Mobile{
+	position: absolute;
+	top: -1em;
+	left: 88%;
+	width: 7em;
+	opacity: 1;
+}

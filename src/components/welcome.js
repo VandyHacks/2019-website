@@ -126,13 +126,21 @@ const WelcomeMobile = () => (
 			<WelcomeTitle />
 		</WelcomeLogoMobileStyle>
 
-		<WelcomeBoxMobileStyle>
-			<WelcomeTextMobileStyle>{welcomeText}</WelcomeTextMobileStyle>
-			<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0', width: '100%' }}>
+		<WelcomeBoxMobileStyle className={'WelcomeBoxMobile'}>
+			<WelcomeTextMobileStyle className={'WelcomeTextMobile'}>{welcomeText}</WelcomeTextMobileStyle>
+			<WelcomeTextMobileStyle
+				className={'WelcomeTextMobile'}
+				style={{ fontWeight: 'bold', lineHeight: '0', width: '100%' }}
+			>
 				{welcomeBoldPresent}
 			</WelcomeTextMobileStyle>
-			<WelcomeTextMobileStyle>{welcomeTextCont}</WelcomeTextMobileStyle>
-			<WelcomeTextMobileStyle style={{ fontWeight: 'bold', lineHeight: '0' }}>
+			<WelcomeTextMobileStyle className={'WelcomeTextMobile'}>
+				{welcomeTextCont}
+			</WelcomeTextMobileStyle>
+			<WelcomeTextMobileStyle
+				className={'WelcomeTextMobile'}
+				style={{ fontWeight: 'bold', lineHeight: '0' }}
+			>
 				{welcomeBoldCode}
 			</WelcomeTextMobileStyle>
 
@@ -141,7 +149,7 @@ const WelcomeMobile = () => (
 			</LowerBarStyle>
 		</WelcomeBoxMobileStyle>
 
-		<Pen3MobileStyle>
+		<Pen3MobileStyle className={'Pen3Mobile'}>
 			<Pen3 />
 		</Pen3MobileStyle>
 	</Container>
