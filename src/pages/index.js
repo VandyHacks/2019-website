@@ -25,14 +25,13 @@ const IndexPage = () => {
 	return (
 		<Container>
 			<BigLogoWithGridAnimated isMobile={isMobile} />
-			<WelcomeAnimated isMobile={isMobile}/>
-			<FAQAnimated isMobile={isMobile}/>
-			<ScheduleAnimated isMobile={isMobile}/>
-			<SponsorBoxAnimated isMobile={isMobile}/>
+			<WelcomeAnimated isMobile={isMobile} />
+			<FAQAnimated isMobile={isMobile} />
+			<ScheduleAnimated isMobile={isMobile} />
+			<SponsorBoxAnimated isMobile={isMobile} />
 			<InvertButton />
 		</Container>
 	);
 };
-
 
 export default IndexPage;

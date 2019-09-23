@@ -40,7 +40,7 @@ const WelcomeTextStyle = styled.p`
 	margin-left: 7em;
 `;
 
-const WelcomeTextMobileStyle = styled.p`
+const p = styled.p`
 	position: relative;
 	margin-left: 0.3em;
 	margin-right: 1em;
@@ -122,36 +122,31 @@ const welcomeBoldCode = ' Code a Masterpiece.';
 
 const WelcomeMobile = () => (
 	<Container>
-		<WelcomeLogoMobileStyle>
+		<div className={'WelcomeLogoMobile'}>
 			<WelcomeTitle />
-		</WelcomeLogoMobileStyle>
+		</div>
 
-		<WelcomeBoxMobileStyle className={'WelcomeBoxMobile'}>
-			<WelcomeTextMobileStyle className={'WelcomeTextMobile'}>{welcomeText}</WelcomeTextMobileStyle>
-			<WelcomeTextMobileStyle
+		<div className={'WelcomeBoxMobile'}>
+			<p className={'WelcomeTextMobile'}>{welcomeText}</p>
+			<p
 				className={'WelcomeTextMobile'}
 				style={{ fontWeight: 'bold', lineHeight: '0', width: '100%' }}
 			>
 				{welcomeBoldPresent}
-			</WelcomeTextMobileStyle>
-			<WelcomeTextMobileStyle className={'WelcomeTextMobile'}>
-				{welcomeTextCont}
-			</WelcomeTextMobileStyle>
-			<WelcomeTextMobileStyle
-				className={'WelcomeTextMobile'}
-				style={{ fontWeight: 'bold', lineHeight: '0' }}
-			>
+			</p>
+			<p className={'WelcomeTextMobile'}>{welcomeTextCont}</p>
+			<p className={'WelcomeTextMobile'} style={{ fontWeight: 'bold', lineHeight: '0' }}>
 				{welcomeBoldCode}
-			</WelcomeTextMobileStyle>
+			</p>
 
 			<LowerBarStyle>
 				<LowerBar />
 			</LowerBarStyle>
-		</WelcomeBoxMobileStyle>
+		</div>
 
-		<Pen3MobileStyle className={'Pen3Mobile'}>
+		<div className={'Pen3Mobile'}>
 			<Pen3 />
-		</Pen3MobileStyle>
+		</div>
 	</Container>
 );
 
