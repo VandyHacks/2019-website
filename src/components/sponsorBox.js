@@ -81,8 +81,16 @@ const SponsorBox = () => {
 						>
 							Special thanks to our Headline sponsors:
 						</p>
-						<Asurion style={{ gridColumn: '1 / span 2', maxHeight: '150px' }} />
-						<Fulcrum style={{ gridColumn: '1 / span 2', maxHeight: '150px' }} />
+						<a href="https://www.asurion.com/" style={{ display: 'contents' }}>
+							<Asurion
+								style={{ gridColumn: '1 / span 2', maxHeight: '150px', pointerEvents: 'auto' }}
+							/>
+						</a>
+						<a href="https://fulcrumgt.com/jobs/" style={{ display: 'contents' }}>
+							<Fulcrum
+								style={{ gridColumn: '1 / span 2', maxHeight: '150px', pointerEvents: 'auto' }}
+							/>
+						</a>
 						<p
 							style={{
 								fontSize: '1.4em',
