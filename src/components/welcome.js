@@ -115,7 +115,7 @@ const LowerBarStyle = styled.div`
 
 // place holder for text
 const welcomeText =
-	'VandyHacks is back this fall in Music City–and it’s ready to redesign hackathons.';
+	'VandyHacks is back this fall in Music City — and it’s ready to redesign hackathons.';
 const welcomeBoldPresent = 'Presenting VandyHacks VI: Art Edition.';
 const welcomeTextCont =
 	'From November 1-3, hundreds of talented and creative students from across the nation will come together to learn, collaborate, and create exciting projects with the ambition to';
