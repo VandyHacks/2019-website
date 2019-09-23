@@ -31,6 +31,7 @@
     "react-helmet": "^5.2.1",
     "react-inview-monitor": "^2.2.1",
     "react-mt-svg-lines": "^0.9.1",
+    "react-use-dimensions": "^1.2.1",
     "styled-components": "^4.3.2",
     "styled-reset": "^4.0.0"
   },

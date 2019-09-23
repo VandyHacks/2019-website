@@ -121,6 +121,34 @@ const LocationDateTextStyleMobile = styled.div`
 	margin-right: auto;
 `;
 
+const ApplyButton = styled.button`
+	margin: 2.5em auto;
+	padding: 0.5em 2em;
+	border: 3px solid hsl(228, 53%, 34%);
+	border-radius: 6px;
+	background: none;
+	color: #293c85;
+	font-weight: 500;
+	transition: all 0.25s linear;
+
+	user-select: none;
+
+	&:hover,
+	&:focus {
+		background-color: hsl(228, 53%, 34%);
+		color: white;
+	}
+
+	outline: none;
+	&::-moz-focus-inner {
+		border: 0;
+	}
+`;
+
+const ApplyButtonMobile = styled(ApplyButton)`
+	margin: 1em auto;
+`;
+
 const ScrollAnimateInLineSvg = ({ SvgElement }) => (
 	<InViewMonitor
 		classNameNotInView="vis-hidden"
@@ -150,6 +178,10 @@ const BigLogoWithGrid = () => {
 					<LocationDateText />
 				</LocationDateTextStyleMobile>
 
+				<ApplyButtonMobile onClick={() => (window.location = 'https://apply.vandyhacks.org')}>
+					Apply
+				</ApplyButtonMobile>
+
 				<LogoGridStyleMobile className="fadeIn">
 					<Grid />
 				</LogoGridStyleMobile>
@@ -169,6 +201,10 @@ const BigLogoWithGrid = () => {
 				<LocationDateTextStyle>
 					<LocationDateText />
 				</LocationDateTextStyle>
+
+				<ApplyButton onClick={() => (window.location = 'https://apply.vandyhacks.org')}>
+					Apply
+				</ApplyButton>
 
 				<LogoGridStyle className="fadeIn">
 					<Grid />

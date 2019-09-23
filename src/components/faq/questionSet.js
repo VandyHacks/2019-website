@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import useDimensions from 'react-use-dimensions';
 import Arrow from './arrow';
 
 import throttle from 'lodash.throttle';
@@ -62,24 +63,13 @@ const getHeight = id => {
 };
 
 const QuestionSet = ({ question, answer, shouldOpen, onClick }) => {
-	const [height, setHeight] = useState(getHeight(question));
-
-	const throttledSetHeight = throttle(() => setHeight(getHeight(question)), 250);
-
-	useEffect(() => {
-		setHeight(getHeight(question));
-		window.addEventListener('resize', throttledSetHeight);
-
-		return () => {
-			window.removeEventListener('resize', throttledSetHeight);
-		};
-	}, [question, throttledSetHeight]);
+	const [ref, { height }] = useDimensions();
 
 	return (
 		<QuestionSetContainer>
 			<QuestionClickArea onClick={onClick}>{getSplitText(question, shouldOpen)}</QuestionClickArea>
 			<Collapsible id={question} open={shouldOpen} height={height}>
-				<StyledAnswer>{answer}</StyledAnswer>
+				<StyledAnswer ref={ref}>{answer}</StyledAnswer>
 			</Collapsible>
 		</QuestionSetContainer>
 	);

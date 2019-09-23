@@ -93,7 +93,7 @@ const FAQText = [
 	{
 		question: "What if I've never been to a hackathon?",
 		answer:
-			'Not to worry! A few weeks before the event, you’ll receive an email with a link to our hacker guide, which will contain all the information you need to make the most out of your weekend. During the event, the VandyHacks Team will be around to help answer any questions. As always, feel free to email us at',
+			'Not to worry! A few weeks before the event, you’ll receive an email with a link to our hacker guide, which will contain all the information you need to make the most out of your weekend. During the event, the VandyHacks Team will be around to help answer any questions. As always, feel free to email us at info@vandyhacks.org',
 	},
 	{
 		question: 'What should I bring?',
@@ -126,17 +126,18 @@ const FAQText = [
 	},
 	{
 		question: 'What if I’m interested in being a mentor?',
-		answer: 'Send us an email at: ',
+		answer:
+			"We're actively recruiting mentors for VandyHacks VI: Art Edition! Send us an email at: info@vandyhacks.org",
 	},
 	{
 		question: 'Who can apply?',
 		answer:
-			'Anyone who is 18 years or older (we will be checking ID) and is currently enrolled in college or university with a valid student ID. International students are invited to apply and attend, but we cannot guarantee full travel reimbursement.',
+			'Anyone who is 18 years or older (we check IDs!) and is currently enrolled in college or university with a valid student ID. International students are invited to apply and attend, but we cannot guarantee full travel reimbursement.',
 	},
 	{
 		question: 'How does registration work?',
 		answer:
-			"Applications are now open! Acceptance is determined by a variety of factors, and applications will be reviewed by our board on a rolling basis. Once you’re accepted, you’ll receive an email from the VandyHacks team. If you're curious, email us for more info at",
+			"Applications are now open! Acceptance is determined by a variety of factors, and applications will be reviewed by our board on a rolling basis. Once you’re accepted, you’ll receive an email from the VandyHacks team. If you're curious, email us for more info at info@vandyhacks.org",
 	},
 	{
 		question: "What if I'm a Vanderbilt student?",
@@ -145,12 +146,12 @@ const FAQText = [
 	{
 		question: 'Are walk-ins allowed?',
 		answer:
-			'We ask that everyone complete an application, but walk-ins will be accepted if space allows. We cannot guarantee swag for walk-ins.',
+			'Everyone (with one exception listed below) must complete an application. If applications have closed and you are seriously interested in attending, please contact info@vandyhacks.org.If you go to a school with a bus route and there are empty spots on the bus when it departs, you will be admitted to VandyHacks VI.',
 	},
 	{
 		question: 'How do I get there?',
 		answer:
-			"Cars, buses, or flights, depending on location! We'll be sending buses to specific schools with large numbers of applicants.",
+			"Cars, buses, or flights, depending on location! We'll be sending buses to specific schools with large numbers of applicants. Anyone who purchases a non-refundable ticket before October 1st will receive guaranteed admission to VandyHacks VI when he or she emails a request including the receipt to info@vandyhacks.org.",
 	},
 	{
 		question: 'Will travel reimbursements be provided?',
@@ -160,7 +161,7 @@ const FAQText = [
 	{
 		question: "How do I get there if I'm not near a bus stop?",
 		answer:
-			'We will be providing gas reimbursements for cars with 3+ hackers in them. Additionally, we may partially subsidize Greyhound and plane tickets. Contact us at',
+			'We will be providing gas reimbursements for cars with 3+ hackers in them. Additionally, we may partially subsidize Greyhound and plane tickets. Contact us at info@vandyhacks.org for travel inquiries.',
 	},
 	{
 		question: 'Will there be parking available for attendees?',

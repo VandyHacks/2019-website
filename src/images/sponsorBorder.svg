@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640.97 786.97"><defs><style>.a8dcbd95-a721-4a67-aa8c-b9a712d6446d{fill:none;stroke:#3048a1;stroke-miterlimit:10;stroke-width:3.97px;stroke-dasharray:12;}</style></defs><title>Asset 20</title><g id="b0af75b9-bc11-49ab-88f4-a83a099afb62" data-name="Layer 2"><g id="b0730aac-bccf-4833-9bcd-be43f1e0e090" data-name="basically everything"><polyline class="a8dcbd95-a721-4a67-aa8c-b9a712d6446d" points="1638.98 87.98 1638.98 784.99 1.99 784.99 1.99 1.99 1043.98 1.99"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640.97 786.97">
+    <title>
+        Asset 20
+    </title>
+    <g id="b0af75b9-bc11-49ab-88f4-a83a099afb62" data-name="Layer 2">
+        <g id="b0730aac-bccf-4833-9bcd-be43f1e0e090" data-name="basically everything">
+            <polyline points="1638.98 87.98 1638.98 784.99 1.99 784.99 1.99 1.99 1043.98 1.99" style="fill:none;stroke:#3048a1;stroke-miterlimit:10;stroke-width:3.97px;stroke-dasharray:12"/>
+        </g>
+    </g>
+</svg>

@@ -4,11 +4,13 @@ import styled from 'styled-components';
 import InViewMonitor from 'react-inview-monitor';
 
 import SponsorTitle from '../images/sponsorText.svg';
-import SponsorBorder from '../images/sponsorBorder.svg';
+import SponsorBorder from './sponsorBorder';
 import isMobileContext from './isMobileContext';
 import UpperBorderBar from '../images/faqUpperBar.svg';
 import LowerBorderBar from '../images/faqLowerBar.svg';
 import Grid from '../images/gridLogo.svg';
+import Asurion from '../images/asurion.svg';
+import Fulcrum from '../images/fulcrumgt.svg';
 
 const Container = styled.div`
 	width: 100%;
@@ -61,11 +63,40 @@ const SponsorBox = () => {
 	} else
 		return (
 			<Container>
-				<SponsorTitleStyle>
+				<SponsorTitleStyle style={{ background: 'white', zIndex: '1' }}>
 					<SponsorTitle />
 				</SponsorTitleStyle>
-				<SponsorBorderStyle>
-					<SponsorBorder />
+				<SponsorBorderStyle style={{ transform: 'translateY(-40px)', zIndex: '0' }}>
+					<SponsorBorder>
+						<p
+							style={{
+								fontSize: '1.4em',
+								gridColumn: '1 / span 2',
+								justifySelf: 'flex-start',
+								margin: 0,
+								color: '#3048a1',
+								fontWeight: 'bold',
+								paddingLeft: '1.75em',
+							}}
+						>
+							Special thanks to our Headline sponsors:
+						</p>
+						<Asurion style={{ gridColumn: '1 / span 2', maxHeight: '150px' }} />
+						<Fulcrum style={{ gridColumn: '1 / span 2', maxHeight: '150px' }} />
+						<p
+							style={{
+								fontSize: '1.4em',
+								gridColumn: '1 / span 2',
+								// justifySelf: 'flex-start',
+								margin: 0,
+								color: '#3048a1',
+								fontWeight: 'bold',
+								paddingLeft: '1.75em',
+							}}
+						>
+							Check back soon for our full sponsor list!
+						</p>
+					</SponsorBorder>
 				</SponsorBorderStyle>
 			</Container>
 		);
