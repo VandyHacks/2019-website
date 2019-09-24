@@ -165,7 +165,7 @@ const scheduleData = [
 			{ time: '9:30p', event: 'Mentor Search' },
 			{ time: '9:30p', event: 'Pitch Session' },
 			{ time: '10:00p', event: 'Hacking Begins' },
-			{ time: '10:30p', event: 'Beginner Workshops (until 3a)' },
+			{ time: '10:30p', event: 'Beginner Workshops (until 3am)' },
 			{ time: '11:59p', event: 'Midnight Snack' },
 		],
 	},
@@ -199,7 +199,7 @@ const scheduleData = [
 			{ time: '10:00a', event: 'Expo' },
 			{ time: '12:00p', event: 'Lunch' },
 			{ time: '1:30p', event: 'Closing Ceremony' },
-			{ time: '3:30p', event: 'Busses Depart' },
+			{ time: '3:30p', event: 'Buses Depart' },
 		],
 	},
 ];
