@@ -140,13 +140,9 @@ const FAQText = [
 			"Applications are now open! Acceptance is determined by a variety of factors, and applications will be reviewed by our board on a rolling basis. Once you’re accepted, you’ll receive an email from the VandyHacks team. If you're curious, email us for more info at info@vandyhacks.org",
 	},
 	{
-		question: "What if I'm a Vanderbilt student?",
-		answer: 'All Vanderbilt students are encouraged to attend, regardless of major or background.',
-	},
-	{
 		question: 'Are walk-ins allowed?',
 		answer:
-			'Everyone (with one exception listed below) must complete an application. If applications have closed and you are seriously interested in attending, please contact info@vandyhacks.org.If you go to a school with a bus route and there are empty spots on the bus when it departs, you will be admitted to VandyHacks VI.',
+			'Everyone (with one exception listed below) must complete an application. If applications have closed and you are seriously interested in attending, please contact info@vandyhacks.org. If you go to a school with a bus route and there are empty spots on the bus when it departs, you will be admitted to VandyHacks VI.',
 	},
 	{
 		question: 'How do I get there?',
@@ -169,7 +165,7 @@ const FAQText = [
 			'Yes! Attendees will be able to find parking at the 25th Avenue Garage, conveniently located next to Vanderbilt’s Engineering and Science Building.',
 	},
 	{
-		question: 'I have more questions!',
+		question: 'Error 404: My question was not found!',
 		answer: "Send us an email at info@vandyhacks.org! We'll be happy to answer!",
 	},
 ];
