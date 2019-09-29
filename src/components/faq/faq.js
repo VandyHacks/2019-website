@@ -142,7 +142,7 @@ const FAQText = [
 	{
 		question: 'Are walk-ins allowed?',
 		answer:
-			'Everyone (with one exception listed below) must complete an application. If applications have closed and you are seriously interested in attending, please contact info@vandyhacks.org. If you go to a school with a bus route and there are empty spots on the bus when it departs, you will be admitted to VandyHacks VI.',
+			'Everyone interested in participating must complete an application. If applications have closed and you are seriously interested in attending VandyHacks VI, please contact info@vandyhacks.org. Additionally, if you go to a school with a bus route and there are available spots on the bus when it departs, you will be admitted to VandyHacks VI.',
 	},
 	{
 		question: 'How do I get there?',
