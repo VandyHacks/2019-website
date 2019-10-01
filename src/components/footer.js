@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Facebook from '../images/facebook.svg'
+import Github from '../images/github.svg'
+import Instagram from '../images/instagram.svg'
+import Twitter from '../images/twitter.svg'
+
 const StyledFooter = styled.div`
-	background: #2d2d2d;
+	background: #fff;
 	color: #fff;
 	text-align: center;
 	height: 60px;
@@ -18,8 +23,9 @@ const SocialIcons = styled.div`
 
 const FooterMsg = styled.div`
     display: inline-block;
-    padding-left: 20px;
+    float: left;
 `
+
 
 const Footer = () => {
     return (
@@ -27,19 +33,19 @@ const Footer = () => {
             <FooterMsg>{'Made with <3 by the VandyHacks team'}</FooterMsg>
             <SocialIcons>
                 <a href="https://www.facebook.com/vandyhacks" rel="noopener noreferrer" target="_blank">
-                    <img class="icon" src="../images/facebook-white.svg" alt="Facebook"></img>
+                    <Facebook />
                 </a>
                 <a href="https://twitter.com/vandyhacks" rel="noopener noreferrer" target="_blank">
-                    <img class="icon" src="./images/twitter-white.svg" alt="Twitter"></img>
+                    <Twitter />
                 </a>
                 <a href="https://www.instagram.com/vandyhacks" rel="noopener noreferrer" target="_blank">
-                    <img class="icon" src="./images/instagram-white.svg" alt="Instagram"></img>
+                    <Instagram />
                 </a>
                 <a href="https://www.github.com/VandyHacks" rel="noopener noreferrer" target="_blank">
-                    <img class="icon" src="./images/github-white.svg" alt="GitHub"></img>
+                    <Github />
                 </a>
             </SocialIcons>
-        </StyledFooter>
+        </StyledFooter >
     );
 };
 
