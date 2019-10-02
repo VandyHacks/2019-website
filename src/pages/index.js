@@ -9,7 +9,7 @@ import FAQAnimated from '../components/faq/faq';
 import ScheduleAnimated from '../components/schedule';
 import SponsorBoxAnimated from '../components/sponsorBox';
 import isMobileContext from '../components/isMobileContext';
-import Footer from '../components/footer'
+import Footer from '../components/footer';
 
 import '../../node_modules/animate.css/animate.min.css';
 import '../css/layout.css';
@@ -41,18 +41,16 @@ const IndexPage = () => {
 		};
 	}, [handleWindowResize]);
 
-	return (
-		<React.Fragment>
+	return isMobile === undefined ? null : (
+		<>
 			<Container>
-				{isMobile === undefined ? null : (
-					<isMobileContext.Provider value={isMobile}>
-						<BigLogoWithGridAnimated />
-						<WelcomeAnimated />
-						<FAQAnimated />
-						<ScheduleAnimated />
-						<SponsorBoxAnimated />
-					</isMobileContext.Provider>
-				)}
+				<isMobileContext.Provider value={isMobile}>
+					<BigLogoWithGridAnimated />
+					<WelcomeAnimated />
+					<FAQAnimated />
+					<ScheduleAnimated />
+					<SponsorBoxAnimated />
+				</isMobileContext.Provider>
 				<a
 					id="mlh-trust-badge"
 					style={{
@@ -77,7 +75,7 @@ const IndexPage = () => {
 				</a>
 			</Container>
 			<Footer />
-		</React.Fragment>
+		</>
 	);
 };
 
