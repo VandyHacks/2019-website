@@ -150,6 +150,14 @@ const FAQText = [
 			"Cars, buses, or flights, depending on location! We'll be sending buses to specific schools with large numbers of applicants. Anyone who purchases a non-refundable ticket before October 1st will receive guaranteed admission to VandyHacks VI when he or she emails a request including the receipt to info@vandyhacks.org.",
 	},
 	{
+		question: 'Are there any buses this year?',
+		answer: `Absolutely! Thanks to our generous sponsors, VandyHacks will be sending out 4 buses this year, making it possible for hundreds of enthusiastic hackers to attend our event. The bus routes (and some of the schools we’ll be stopping at) are as follows - 
+<ul><li>Pittsburgh > Columbus > Vanderbilt University [University of Pittsburgh & Carnegie Mellon University, Ohio State University]</li>
+<li>West Lafayette (Indianapolis) > Vanderbilt University [Purdue University]</li>
+<li>Atlanta > Vanderbilt University [Georgia Institute of Technology]</li>
+<li>Chicago > Champaign > Vanderbilt University [Illinois Institute of Technology, University of Illinois at Urbana-Champaign]</li></ul>`,
+	},
+	{
 		question: 'Will travel reimbursements be provided?',
 		answer:
 			'Travel reimbursements outside of the bus routes are tentative and will be awarded on a rolling basis.',

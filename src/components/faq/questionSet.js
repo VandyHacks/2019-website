@@ -67,7 +67,7 @@ const QuestionSet = ({ question, answer, shouldOpen, onClick }) => {
 		<QuestionSetContainer>
 			<QuestionClickArea onClick={onClick}>{getSplitText(question, shouldOpen)}</QuestionClickArea>
 			<Collapsible id={question} open={shouldOpen} height={height}>
-				<StyledAnswer ref={ref}>{answer}</StyledAnswer>
+				<StyledAnswer dangerouslySetInnerHTML={{ __html: answer }} ref={ref} />
 			</Collapsible>
 		</QuestionSetContainer>
 	);
