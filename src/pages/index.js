@@ -10,6 +10,7 @@ import ScheduleAnimated from '../components/schedule';
 import SponsorBoxAnimated from '../components/sponsorBox';
 import isMobileContext from '../components/isMobileContext';
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 
 import '../../node_modules/animate.css/animate.min.css';
 import '../css/layout.css';
@@ -44,6 +45,7 @@ const IndexPage = () => {
 	return isMobile === undefined ? null : (
 		<>
 			<Container>
+				<SEO></SEO>
 				<isMobileContext.Provider value={isMobile}>
 					<BigLogoWithGridAnimated />
 					<WelcomeAnimated />
