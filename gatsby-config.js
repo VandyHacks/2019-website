@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: process.env.STATUS == null ? `VandyHacks VI` : `${process.env.STATUS} VandyHacks VI`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+		description: `Applications are now open for VandyHacks VI: Art Edition! Are you ready to code a masterpiece?`,
 		author: `The VandyHacks Team`,
 	},
 	plugins: [
