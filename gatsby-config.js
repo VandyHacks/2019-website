@@ -1,7 +1,7 @@
 module.exports = {
 	siteMetadata: {
 		title: process.env.STATUS == null ? `VandyHacks VI` : `${process.env.STATUS} VandyHacks VI`,
-		description: `Applications are now open for VandyHacks VI: Art Edition! Are you ready to code a masterpiece?`,
+		description: `VandyHacks VI: Art Edition will be held on November 1st–3rd. Applications are now open! Are you ready to code a masterpiece?`,
 		author: `The VandyHacks Team`,
 	},
 	plugins: [
