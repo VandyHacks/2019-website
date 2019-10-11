@@ -1,0 +1,236 @@
+* {
+    user-select: none;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../../fonts/helvetica-75-bold-outline-587ebe00b76ba.woff') format('woff');
+}
+
+body {
+    background-color: #d8ae96;
+}
+
+#top-background-art {
+    position: absolute;
+    width: 100vw;
+    top: 0vw;
+    z-index: -1;
+}
+
+#bottom-background-art {
+    position: absolute;
+    width: 100vw;
+    top: 60vw;
+    z-index: -1;
+}
+
+.header-text {
+    font-family: 'Helvetica Neue';
+    font-size: 3vw;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+}
+
+/*-----------------------------------------*/
+
+#header-position {
+    position: absolute;
+    width: 100%;
+    top: 7.5vw;
+    z-index: 1;
+}
+
+#vhLogoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#eventInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.7em;
+    text-align: center;
+    line-height: 1.2vw;
+}
+
+#eventName {
+    margin: 1.8vw 0;
+}
+
+#eventLocale {
+    font-family: Helvetica;
+    color: #ffffff;
+    font-size: 1.5vw;
+    letter-spacing: 0.5px;
+}
+
+/*-----------------------------------------*/
+
+#welcome-position {
+    position: absolute;
+    width: 53%;
+    top: 56vw;
+    left: 8vw;
+    z-index: 1;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5vw;
+}
+
+#welcome-header {
+    margin: 0 0 1em 0;
+}
+
+#welcome-text {
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    color: #00aeff;
+}
+
+/*-----------------------------------------*/
+
+img {
+    margin: 0 !important;
+}
+
+#FAQ-position {
+    position: absolute;
+    width: 42%;
+    top: 93vw;
+    right: 10vw;
+    z-index: 1;
+}
+
+#FAQ {
+    text-align: right;
+    padding-top: 2vw;
+}
+
+.faq-item {
+    width: 100%;
+    transition: all 1s;
+    color: white;
+}
+
+.question {
+    display: flex;
+    flex-direction: row;
+}
+
+.answer {
+    margin: -1vw 0 1vw 0;
+    padding: 0 0 0 1vw;
+    width: 85%;
+}
+
+.title {
+    width: 95%;
+    cursor: pointer;
+}
+
+.arrow-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 3%;
+    cursor: pointer;
+    padding-bottom: 0.2vw;
+    height: 1vw;
+}
+
+@keyframes up {
+    from { transform: rotate(180deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes down {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+.arrow-up {
+    animation: 'up' 0.1s linear forwards;
+}
+
+.arrow-down {
+    animation: 'down' 0.1s linear forwards;
+}
+
+/*-----------------------------------------*/
+
+#schedule-position {
+    position: absolute;
+    width: 46%;
+    top: 160vw;
+    left: 4vw;
+    z-index: 1;
+}
+
+#schedule {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+}
+
+#schedule-header {
+    margin: 0 0 0.9em 0;
+}
+
+#schedule-text {
+    height: 53.45vw;
+    padding: 3vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.schedule-date {
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    line-height: 2vw;
+    color: #00aeff;
+    font-weight: 600;
+    margin-bottom: 0.5vw;
+}
+
+.schedule-time {
+    font-family: sans-serif;
+    font-size: 1vw;
+    line-height: 1.5vw;
+    color: #00aeff;
+    padding-left: 3vw;
+}
+
+.event {
+    display: flex;
+    flex-direction: row;
+}
+
+.schedule-description {
+    padding-left: 2vw;
+}
+
+/*-----------------------------------------*/
+
+#sponsor-position {
+    position: absolute;
+    width: 90vw;
+    height: 35vw;
+    top: 222vw;
+    right: 10vw;
+    z-index: 0;
+}
+
+#sponsors {
+    text-align: right;
+}
+

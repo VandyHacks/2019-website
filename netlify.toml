@@ -1,0 +1,9 @@
+[build]
+  publish = "./public"
+  command = "npm run build"
+
+[context.deploy-preview]
+  environment = { STATUS = "DEPLOY PREVIEW" }
+
+[context.staging]
+  environment = { STATUS = "STAGING"}
