@@ -23,7 +23,7 @@ class FAQItem extends React.Component {
 
 	changeHeight() {
 		if (!this.state.open) {
-			this.setState({ height: '10vw', position: 'relative' });
+			this.setState({ height: '8vw', position: 'relative' });
 		} else {
 			this.setState({ height: 'auto', position: '' });
 		}
@@ -35,7 +35,10 @@ class FAQItem extends React.Component {
 		return (
 			<div
 				className="faq-item"
-				style={{ height: this.state.height, position: this.state.position }}
+				style={{
+					height: this.state.height,
+					position: this.state.position,
+				}}
 			>
 				<div className="noselect" />
 				<div className="question">

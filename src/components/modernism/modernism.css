@@ -14,7 +14,7 @@ body {
 #top-background-art {
     position: absolute;
     width: 100vw;
-    top: 0vw;
+    top: 1vw;
     z-index: -1;
 }
 
@@ -27,7 +27,7 @@ body {
 
 .header-text {
     font-family: 'Helvetica Neue';
-    font-size: 3vw;
+    font-size: 3.5vw;
     letter-spacing: 0.2em;
     color: #ffffff;
 }
@@ -66,7 +66,8 @@ body {
     font-family: Helvetica;
     color: #ffffff;
     font-size: 1.5vw;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05vw;
+    margin: 0.3vw;
 }
 
 /*-----------------------------------------*/
@@ -91,8 +92,9 @@ body {
 
 #welcome-text {
     font-family: sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     line-height: 2vw;
+    letter-spacing: 0.05vw;
     color: #00aeff;
 }
 
@@ -117,8 +119,14 @@ img {
 
 .faq-item {
     width: 100%;
-    transition: all 1s;
-    color: white;
+    color: #ffffff;
+    font-size: 0.8vw;
+    line-height: 1.3vw;
+}
+
+.title {
+    font-size: 0.9vw;
+    margin-bottom: 1.3vw;
 }
 
 .question {
@@ -134,7 +142,6 @@ img {
 
 .title {
     width: 95%;
-    cursor: pointer;
 }
 
 .arrow-wrapper {
@@ -174,6 +181,7 @@ img {
     top: 160vw;
     left: 4vw;
     z-index: 1;
+
 }
 
 #schedule {
@@ -183,12 +191,12 @@ img {
 }
 
 #schedule-header {
-    margin: 0 0 0.9em 0;
+    margin: 0;
 }
 
 #schedule-text {
     height: 53.45vw;
-    padding: 3vw;
+    padding: 5vw 3vw 3vw 3vw;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -225,7 +233,7 @@ img {
     position: absolute;
     width: 90vw;
     height: 35vw;
-    top: 222vw;
+    top: 220vw;
     right: 10vw;
     z-index: 0;
 }
