@@ -275,7 +275,7 @@ const Schedule = () => {
 
 					<ScheduleRightCol>
 						{curSchedule.schedule.map(({ time, event }) => (
-							<div>
+							<div key={event}>
 								<ScheduleBodyTimeCol>
 									<TimeText>{time}</TimeText>
 								</ScheduleBodyTimeCol>
