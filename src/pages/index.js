@@ -45,7 +45,7 @@ const IndexPage = () => {
 	return isMobile === undefined ? null : (
 		<>
 			<Container>
-				<SEO></SEO>
+				<SEO />
 				<isMobileContext.Provider value={isMobile}>
 					<BigLogoWithGridAnimated />
 					<WelcomeAnimated />
