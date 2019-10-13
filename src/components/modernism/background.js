@@ -1,14 +1,55 @@
 import React from 'react';
+import InViewMonitor from 'react-inview-monitor';
+import '../../../node_modules/animate.css/animate.min.css';
 
 import HeaderShape from '../../images/HeaderShape.svg';
 import TextHeaderShapes from '../../images/TextHeaderShapes.svg';
 
+import HeaderInfo from './headerInfo';
+import Welcome from '../welcome';
+import FAQ from '../modernism/faq/faq';
+import Schedule from '../schedule';
+
+// const TopBackgroundArt = () => {
+// 	return <img id="top-background-art" src={HeaderShape} alt="" />;
+// };
+
+// const BottomBackgroundArt = () => {
+// 	return <img id="bottom-background-art" src={TextHeaderShapes} alt="" />;
+// };
+
+const styleTop = {
+	width: '98vw',
+	height: '60vw',
+	marginTop: '-2.5vw',
+	zIndex: '-1',
+};
+
+const styleBottom = {
+	width: '98.5vw',
+	height: '160vw',
+	marginTop: '2vw',
+	zIndex: '-1',
+};
+
 const TopBackgroundArt = () => {
-	return <img id="top-background-art" src={HeaderShape} alt="" />;
+	return (
+		<InViewMonitor classNameNotInView="vis-hidden" classNameInView="animated fadeInLeft">
+			<HeaderShape style={styleTop} />
+			<HeaderInfo />
+		</InViewMonitor>
+	);
 };
 
 const BottomBackgroundArt = () => {
-	return <img id="bottom-background-art" src={TextHeaderShapes} alt="" />;
+	return (
+		<InViewMonitor classNameNotInView="vis-hidden" classNameInView="animated fadeInRight">
+			<TextHeaderShapes style={styleBottom} />
+			<Welcome />
+			<FAQ />
+			<Schedule />
+		</InViewMonitor>
+	);
 };
 
 export { TopBackgroundArt, BottomBackgroundArt };
