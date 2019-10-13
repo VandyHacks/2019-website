@@ -62,7 +62,7 @@ const TextBody = styled.div`
 	justify-content: space-between;
 	margin-top: 32px;
 	margin-left: 3em;
-	mragin-right: 3em;
+	margin-right: 3em;
 `;
 
 const TextBodyMobile = styled.div`
@@ -171,6 +171,11 @@ const FAQText = [
 		question: 'Will there be parking available for attendees?',
 		answer:
 			'Yes! Attendees will be able to find parking at the 25th Avenue Garage, conveniently located next to Vanderbilt’s Engineering and Science Building.',
+	},
+	{
+		question: 'Is there a code of conduct?',
+		answer:
+			'Yes! Our event is covered under the <a href="https://https://static.mlh.io/docs/mlh-code-of-conduct.pdf">MLH Code of Conduct</a> and the <a href="/code-of-conduct.pdf">VandyHacks Code of Conduct<a/>.',
 	},
 	{
 		question: 'Error 404: My question was not found!',
