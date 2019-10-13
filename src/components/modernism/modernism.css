@@ -3,7 +3,7 @@
 }
 
 @font-face {
-    font-family: 'Helvetica Neue';
+    font-family: 'HelveticaNeue';
     src: url('../../fonts/helvetica-75-bold-outline-587ebe00b76ba.woff') format('woff');
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 .header-text {
-    font-family: 'Helvetica Neue';
+    font-family: 'HelveticaNeue';
     font-size: 3.5vw;
     letter-spacing: 0.2em;
     color: #ffffff;
@@ -138,6 +138,12 @@ img {
     margin: -1vw 0 1vw 0;
     padding: 0 0 0 1vw;
     width: 85%;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.answer.open {
+    transition: max-height 0.3s ease-out;
 }
 
 .title {

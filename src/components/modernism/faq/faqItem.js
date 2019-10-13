@@ -9,7 +9,7 @@ class FAQItem extends React.Component {
 
 		this.state = {
 			open: false,
-			height: 'auto',
+			height: '0vw',
 			position: '',
 			question: this.props.question,
 			answer: this.props.answer,
@@ -23,23 +23,22 @@ class FAQItem extends React.Component {
 
 	changeHeight() {
 		if (!this.state.open) {
-			this.setState({ height: '8vw', position: 'relative' });
+			this.setState({ maxHeight: '8vw', position: 'relative' });
 		} else {
-			this.setState({ height: 'auto', position: '' });
+			this.setState({ maxHeight: '0vw', position: '' });
 		}
 	}
 
 	render() {
 		const arrow_class = this.state.open ? 'arrow-up' : 'arrow-down';
+		const answer_open = this.state.open ? 'open' : '';
+		const styling = {
+			maxHeight: this.state.maxHeight,
+			position: this.state.position,
+		};
 
 		return (
-			<div
-				className="faq-item"
-				style={{
-					height: this.state.height,
-					position: this.state.position,
-				}}
-			>
+			<div className="faq-item">
 				<div className="noselect" />
 				<div className="question">
 					<h4 className="title">{this.state.question}</h4>
@@ -47,7 +46,9 @@ class FAQItem extends React.Component {
 						<img src={Arrow} alt="" />
 					</div>
 				</div>
-				{this.state.open && <div className="answer">{this.state.answer}</div>}
+				<div className={`answer ${answer_open}`} style={styling}>
+					{this.state.answer}
+				</div>
 			</div>
 		);
 	}
