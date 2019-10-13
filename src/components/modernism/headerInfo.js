@@ -6,6 +6,7 @@ const HeaderInfo = () => {
 	const style = {
 		width: '20%',
 	};
+
 	const data = useStaticQuery(graphql`
 		query {
 			fileName: file(relativePath: { eq: "vhlogo.png" }) {
@@ -17,6 +18,7 @@ const HeaderInfo = () => {
 			}
 		}
 	`);
+
 	return (
 		<div id="header-position">
 			<div id="vhLogoContainer">

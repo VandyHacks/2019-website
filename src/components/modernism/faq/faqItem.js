@@ -9,7 +9,7 @@ class FAQItem extends React.Component {
 
 		this.state = {
 			open: false,
-			height: '0vw',
+			maxHeight: '0vw',
 			position: '',
 			question: this.props.question,
 			answer: this.props.answer,
@@ -43,7 +43,7 @@ class FAQItem extends React.Component {
 				<div className="question">
 					<h4 className="title">{this.state.question}</h4>
 					<div className={`arrow-wrapper ${arrow_class}`} onClick={() => this.onArrowClick()}>
-						<img src={Arrow} alt="" />
+						<img className="arrow" src={Arrow} alt="" />
 					</div>
 				</div>
 				<div className={`answer ${answer_open}`} style={styling}>

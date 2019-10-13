@@ -15,7 +15,11 @@ import { TopBackgroundArt, BottomBackgroundArt } from '../components/modernism/b
 import HeaderInfo from '../components/modernism/headerInfo';
 
 const IndexPage = () => (
-	<div>
+	<>
+		<head>
+			<link rel="stylesheet" href="animate.min.css" />
+		</head>
+
 		<a
 			id="mlh-trust-badge"
 			href="https://mlh.io/seasons/na-2020/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2020_seaons&utm_content=blue"
@@ -40,9 +44,6 @@ const IndexPage = () => (
 		</a>
 
 		<SEO title="" />
-		{
-			// insert VH logo
-		}
 
 		<TopBackgroundArt />
 		<BottomBackgroundArt />
@@ -56,7 +57,7 @@ const IndexPage = () => (
 		<Schedule></Schedule>
 
 		<SponsorBox></SponsorBox>
-	</div>
+	</>
 );
 
 export default IndexPage;
