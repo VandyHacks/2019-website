@@ -53,6 +53,19 @@ const SponsorContainer = styled.div`
 	font-size: 0.75em;
 	align-items: center;
 	z-index: 10;
+
+	svg,
+	img {
+		cursor: pointer;
+		pointer-events: all;
+
+		transition: all 0.15s ease-out;
+
+		&:hover {
+			filter: opacity(0.5);
+			transform: translateY(-3px);
+		}
+	}
 `;
 
 const LogoGridStyleMobile = styled.div`
@@ -87,7 +100,9 @@ const sponsors = {
 		{
 			name: "Macy' Tech",
 			link: 'https://technology.macysjobs.com/',
-			Logo: () => <img style={{ margin: 0 }} src="/macys-tech.jpg" alt="Macy's Tech Logo" />,
+			Logo: props => (
+				<img {...props} style={{ margin: 0 }} src="/macys-tech.jpg" alt="Macy's Tech Logo" />
+			),
 		},
 		{ name: 'GIPHY', link: 'https://giphy.com/', Logo: GIPHY },
 	],
@@ -105,125 +120,47 @@ const sponsors = {
 	campus: [{ name: 'Sticker Mule', link: 'https://www.stickermule.com/', Logo: StickerMule }],
 };
 
+const styles = {
+	headline: { gridColumn: '1 / span 2', maxHeight: '150px', pointerEvents: 'auto' },
+	platinum: {
+		gridColumn: '1 / span 2',
+		maxHeight: '125px',
+		pointerEvents: 'auto',
+		maxWidth: '100%',
+	},
+	gold: {
+		gridColumn: '1 / span 2',
+		maxHeight: '100px',
+		pointerEvents: 'auto',
+		width: '75%',
+	},
+	silver: {
+		gridColumn: 'auto',
+		maxHeight: '100px',
+		pointerEvents: 'auto',
+		width: '100%',
+	},
+	bronze: {
+		gridColumn: 'auto',
+		maxHeight: '75px',
+		pointerEvents: 'auto',
+		width: '75%',
+	},
+	campus: { gridColumn: 'auto', maxHeight: '60px', width: '60%', pointerEvents: 'auto' },
+};
+
 const Sponsors = ({ isMobile }) => (
 	<SponsorContainer isMobile={isMobile}>
-		{/* <p
-			style={{
-				fontSize: '1.4em',
-				gridColumn: '1 / span 2',
-				justifySelf: 'flex-start',
-				margin: 0,
-				color: '#3048a1',
-				fontWeight: 'bold',
-				paddingLeft: isMobile ? 0 : '1.75em',
-			}}
-		>
-			Special thanks to our Headline sponsors:
-		</p> */}
-		{sponsors.headline.map(sponsor => (
-			<a
-				href={sponsor.link}
-				title={sponsor.name}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={{ display: 'contents' }}
-				key={sponsor.link}
-			>
+		{Object.keys(sponsors).flatMap(tier =>
+			sponsors[tier].map(sponsor => (
 				<sponsor.Logo
-					style={{ gridColumn: '1 / span 2', maxHeight: '150px', pointerEvents: 'auto' }}
+					tooltiptext={sponsor.name}
+					key={sponsor.link}
+					onClick={() => window.open(sponsor.link, '_blank', 'noopener,noreferrer')}
+					style={{ ...styles[tier] }}
 				/>
-			</a>
-		))}
-		{sponsors.platinum.map(sponsor => (
-			<a
-				href={sponsor.link}
-				title={sponsor.name}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={{ display: 'contents' }}
-				key={sponsor.link}
-			>
-				<sponsor.Logo
-					style={{
-						gridColumn: '1 / span 2',
-						maxHeight: '125px',
-						pointerEvents: 'auto',
-						maxWidth: '100%',
-					}}
-				/>
-			</a>
-		))}
-		{sponsors.gold.map(sponsor => (
-			<a
-				href={sponsor.link}
-				title={sponsor.name}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={{ display: 'contents' }}
-				key={sponsor.link}
-			>
-				<sponsor.Logo
-					style={{
-						gridColumn: '1 / span 2',
-						maxHeight: '100px',
-						pointerEvents: 'auto',
-						width: '75%',
-					}}
-				/>
-			</a>
-		))}
-		{sponsors.silver.map(sponsor => (
-			<a
-				href={sponsor.link}
-				title={sponsor.name}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={{ display: 'contents' }}
-				key={sponsor.link}
-			>
-				<sponsor.Logo
-					style={{
-						gridColumn: 'auto',
-						maxHeight: '100px',
-						pointerEvents: 'auto',
-						width: '100%',
-					}}
-				/>
-			</a>
-		))}
-		{sponsors.bronze.map(sponsor => (
-			<a
-				href={sponsor.link}
-				title={sponsor.name}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={{ display: 'contents' }}
-				key={sponsor.link}
-			>
-				<sponsor.Logo
-					style={{
-						gridColumn: 'auto',
-						maxHeight: '75px',
-						pointerEvents: 'auto',
-						width: '75%',
-					}}
-				/>
-			</a>
-		))}
-		{sponsors.campus.map(sponsor => (
-			<a
-				href={sponsor.link}
-				title={sponsor.name}
-				target="_blank"
-				rel="noopener noreferrer"
-				style={{ display: 'contents' }}
-				key={sponsor.link}
-			>
-				<sponsor.Logo
-					style={{ gridColumn: 'auto', maxHeight: '60px', width: '60%', pointerEvents: 'auto' }}
-				/>
-			</a>
-		))}
+			)),
+		)}
 	</SponsorContainer>
 );
 
