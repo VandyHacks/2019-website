@@ -66,6 +66,11 @@ const SponsorContainer = styled.div`
 			transform: translateY(-3px);
 		}
 	}
+
+	img {
+		margin: 0;
+		object-fit: contain;
+	}
 `;
 
 const LogoGridStyleMobile = styled.div`
@@ -100,9 +105,7 @@ const sponsors = {
 		{
 			name: "Macy' Tech",
 			link: 'https://technology.macysjobs.com/',
-			Logo: props => (
-				<img {...props} style={{ margin: 0 }} src="/macys-tech.jpg" alt="Macy's Tech Logo" />
-			),
+			Logo: props => <img {...props} src="/macys-tech.jpg" alt="Macy's Tech Logo" />,
 		},
 		{ name: 'GIPHY', link: 'https://giphy.com/', Logo: GIPHY },
 	],
@@ -117,7 +120,16 @@ const sponsors = {
 		{ name: 'Hillman', link: 'https://www.hillmangroup.com/us/en', Logo: Hillman },
 		{ name: 'Vanguard', link: 'https://investor.vanguard.com/corporate-portal/', Logo: Vanguard },
 	],
-	campus: [{ name: 'Sticker Mule', link: 'https://www.stickermule.com/', Logo: StickerMule }],
+	campus: [
+		{ name: 'Sticker Mule', link: 'https://www.stickermule.com/', Logo: StickerMule },
+		{
+			name: 'Vanderbilt Ventures Group',
+			link: 'https://studentorg.vanderbilt.edu/vanderbiltventures/',
+			Logo: props => (
+				<img {...props} src="/vanderbilt-ventures-group.png" alt="Vanderbilt Ventures Group Logo" />
+			),
+		},
+	],
 };
 
 const styles = {
