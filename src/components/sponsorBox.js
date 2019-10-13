@@ -52,6 +52,7 @@ const SponsorContainer = styled.div`
 	margin-bottom: 1em;
 	font-size: 0.75em;
 	align-items: center;
+	z-index: 10;
 `;
 
 const LogoGridStyleMobile = styled.div`
@@ -62,7 +63,6 @@ const LogoGridStyleMobile = styled.div`
 	margin-right: auto;
 	width: 100%;
 	opacity: 1;
-	z-index: -1;
 `;
 
 const sponsors = {
@@ -237,7 +237,7 @@ const SponsorBox = () => {
 					<SponsorTitle />
 				</SponsorTitleStyleMobile>
 				<LogoGridStyleMobile>
-					<div style={{ position: 'absolute', width: '100%' }}>
+					<div style={{ position: 'absolute', width: '100%', zIndex: '-10' }}>
 						<Grid />
 					</div>
 					<Sponsors isMobile />
