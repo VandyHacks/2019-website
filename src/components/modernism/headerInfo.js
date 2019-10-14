@@ -25,7 +25,7 @@ const HeaderInfo = () => {
 				<Img style={style} fluid={data.fileName.childImageSharp.fluid} />
 				<div id="eventInfo">
 					<div className="header-text" id="eventName">
-						VandyHacks VI
+						VandyHacks VI: Art Edition
 					</div>
 					<div id="eventLocale">Nov 1-3, 2019 • Nashville, TN </div>
 				</div>

@@ -10,14 +10,6 @@ import Welcome from '../welcome';
 import FAQ from '../modernism/faq/faq';
 import Schedule from '../schedule';
 
-// const TopBackgroundArt = () => {
-// 	return <img id="top-background-art" src={HeaderShape} alt="" />;
-// };
-
-// const BottomBackgroundArt = () => {
-// 	return <img id="bottom-background-art" src={TextHeaderShapes} alt="" />;
-// };
-
 const styleTop = {
 	width: '98vw',
 	height: '60vw',
