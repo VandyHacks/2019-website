@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 
 import SponsorBox from '../components/sponsorBox';
 
-import { TopBackgroundArt, BottomBackgroundArt } from '../components/modernism/background';
+import { TopSection, BottomSection } from '../components/modernism/sections';
 
 const IndexPage = () => (
 	<>
@@ -35,10 +35,10 @@ const IndexPage = () => (
 			/>
 		</a>
 
-		<SEO title="" />
+		<SEO title="VandyHacks 2019" />
 
-		<TopBackgroundArt />
-		<BottomBackgroundArt />
+		<TopSection />
+		<BottomSection />
 
 		<InViewMonitor classNameNotInView="vis-hidden" classNameInView="animated fadeInUp">
 			<SponsorBox />

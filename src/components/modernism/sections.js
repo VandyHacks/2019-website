@@ -7,7 +7,7 @@ import TextHeaderShapes from '../../images/TextHeaderShapes.svg';
 
 import HeaderInfo from './headerInfo';
 import Welcome from '../welcome';
-import FAQ from '../modernism/faq/faq';
+import FAQ from './faq/faq';
 import Schedule from '../schedule';
 
 const styleTop = {
@@ -24,7 +24,7 @@ const styleBottom = {
 	zIndex: '-1',
 };
 
-const TopBackgroundArt = () => {
+const TopSection = () => {
 	return (
 		<InViewMonitor classNameNotInView="vis-hidden" classNameInView="animated fadeInLeft">
 			<HeaderShape style={styleTop} />
@@ -33,7 +33,7 @@ const TopBackgroundArt = () => {
 	);
 };
 
-const BottomBackgroundArt = () => {
+const BottomSection = () => {
 	return (
 		<InViewMonitor classNameNotInView="vis-hidden" classNameInView="animated fadeInRight">
 			<TextHeaderShapes style={styleBottom} />
@@ -44,4 +44,4 @@ const BottomBackgroundArt = () => {
 	);
 };
 
-export { TopBackgroundArt, BottomBackgroundArt };
+export { TopSection, BottomSection };
