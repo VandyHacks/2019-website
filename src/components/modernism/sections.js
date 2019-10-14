@@ -11,14 +11,14 @@ import FAQ from './faq/faq';
 import Schedule from '../schedule';
 
 const styleTop = {
-	width: '98vw',
+	width: '98.8vw',
 	height: '60vw',
 	marginTop: '-2.5vw',
 	zIndex: '-1',
 };
 
 const styleBottom = {
-	width: '98.5vw',
+	width: '98.8vw',
 	height: '160vw',
 	marginTop: '2vw',
 	zIndex: '-1',
