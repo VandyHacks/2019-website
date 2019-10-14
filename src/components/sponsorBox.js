@@ -121,7 +121,11 @@ const sponsors = {
 		{ name: 'Vanguard', link: 'https://investor.vanguard.com/corporate-portal/', Logo: Vanguard },
 	],
 	campus: [
-		{ name: 'Sticker Mule', link: 'https://www.stickermule.com/', Logo: StickerMule },
+		{
+			name: 'Sticker Mule',
+			link: ' http://hackp.ac/mlh-stickermule-hackathons',
+			Logo: StickerMule,
+		},
 		{
 			name: 'Vanderbilt Ventures Group',
 			link: 'https://studentorg.vanderbilt.edu/vanderbiltventures/',
