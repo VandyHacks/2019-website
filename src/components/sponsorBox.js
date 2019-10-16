@@ -86,7 +86,7 @@ const LogoGridStyleMobile = styled.div`
 const sponsors = {
 	headline: [
 		{ name: 'Asurion', link: 'https://www.asurion.com/', Logo: Asurion },
-		{ name: 'Fulcrum GT', link: 'https://fulcrumgt.com/jobs/', Logo: Fulcrum },
+		{ name: 'Fulcrum GT', link: 'https://startup.fulcrumgt.com/', Logo: Fulcrum },
 	],
 	platinum: [
 		{
