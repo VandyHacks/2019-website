@@ -152,7 +152,7 @@ const FAQText = [
 	{
 		question: 'Are there any buses this year?',
 		answer: `Absolutely! Thanks to our generous sponsors, VandyHacks will be sending out 4 buses this year, making it possible for hundreds of enthusiastic hackers to attend our event. The bus routes (and some of the schools we’ll be stopping at) are as follows - 
-<ul><li>Pittsburgh > Columbus > Vanderbilt University [University of Pittsburgh & Carnegie Mellon University, Ohio State University]</li>
+<ul>
 <li>West Lafayette (Indianapolis) > Vanderbilt University [Purdue University]</li>
 <li>Atlanta > Vanderbilt University [Georgia Institute of Technology]</li>
 <li>Chicago > Champaign > Vanderbilt University [Illinois Institute of Technology, University of Illinois at Urbana-Champaign]</li></ul>`,
