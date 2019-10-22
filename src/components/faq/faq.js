@@ -160,7 +160,7 @@ const FAQText = [
 	{
 		question: 'Will travel reimbursements be provided?',
 		answer:
-			'Travel reimbursements outside of the bus routes are tentative and will be awarded on a rolling basis.',
+			'To assist hackers with travel arrangements, we will reimburse up to $50 spent on gas getting to VandyHacks. Unfortunately, we are unable to reimburse flights to or from VandyHacks VI. Information will be sent out to applicants who list on their applications they are interested in receiving travel reimbursement.',
 	},
 	{
 		question: "How do I get there if I'm not near a bus stop?",
