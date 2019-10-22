@@ -107,7 +107,7 @@ const sponsors = {
 			link: 'https://technology.macysjobs.com/',
 			Logo: props => <img {...props} src="/macys-tech.jpg" alt="Macy's Tech Logo" />,
 		},
-		{ name: 'GIPHY', link: 'https://giphy.com/', Logo: GIPHY },
+		{ name: 'GIPHY', link: 'https://engineering.giphy.com/', Logo: GIPHY },
 	],
 	bronze: [
 		{
