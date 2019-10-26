@@ -112,7 +112,7 @@ const FAQText = [
 	{
 		question: 'How are teams formed? Do I need a team?',
 		answer:
-			"Teams are limited to four people. If you're applying with a team, we will review all of your team members' applications to determine admission. We will also have a pitch session where attendees can share their ideas and find potential teammates. However, teams are not required, so feel free to work individually.",
+			"Teams are limited to four people. We will have a pitch session where attendees can share their ideas and find potential teammates. In addition, we have a Facebook group(https://www.facebook.com/groups/723097038207924) where hackers can form teams. However, teams are not required, so feel free to work individually.",
 	},
 	{
 		question: 'Will there be other activities besides hacking?',
