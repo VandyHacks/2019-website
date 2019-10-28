@@ -160,7 +160,7 @@ const FAQText = [
 	{
 		question: 'Will travel reimbursements be provided?',
 		answer:
-			'To assist hackers with travel arrangements, we will reimburse up to $50 spent on gas getting to VandyHacks. We can also reimburse flights up to $100. Information will be sent out to applicants who list on their applications they are interested in receiving travel reimbursement a week before the event.',
+			'To assist hackers with travel arrangements, we will reimburse up to $50 spent on gas getting to VandyHacks. We can also reimburse flights up to $100. Information will be sent out to applicants who indicated on their applications they are interested in receiving travel reimbursement before the event.',
 	},
 	{
 		question: "How do I get there if I'm not near a bus stop?",
