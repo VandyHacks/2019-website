@@ -179,8 +179,8 @@ const BigLogoWithGrid = () => {
 					<LocationDateText />
 				</LocationDateTextStyleMobile>
 
-				<ApplyButtonMobile onClick={() => (window.location = 'https://apply.vandyhacks.org')}>
-					Apply
+				<ApplyButtonMobile>
+					Applications Closed!
 				</ApplyButtonMobile>
 
 				<LogoGridStyleMobile className="fadeIn">
