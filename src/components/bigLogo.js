@@ -152,8 +152,8 @@ const ApplyButtonMobile = styled(ApplyButton)`
 
 const ScrollAnimateInLineSvg = ({ SvgElement }) => (
 	<InViewMonitor
-		classNameNotInView="vis-hidden"
-		classNameInView=""
+		classNameNotInView='vis-hidden'
+		classNameInView=''
 		childPropsInView={{ animate: true }}
 	>
 		<MtSvgLines duration={2500} fade>
@@ -179,11 +179,13 @@ const BigLogoWithGrid = () => {
 					<LocationDateText />
 				</LocationDateTextStyleMobile>
 
-				<ApplyButtonMobile>
-					Applications Closed!
+				<ApplyButtonMobile
+					onClick={() => (window.location = 'https://vandyhacksvi.devpost.com/submissions')}
+				>
+					View Submissions
 				</ApplyButtonMobile>
 
-				<LogoGridStyleMobile className="fadeIn">
+				<LogoGridStyleMobile className='fadeIn'>
 					<Grid />
 				</LogoGridStyleMobile>
 			</ContainerMobile>
@@ -203,11 +205,13 @@ const BigLogoWithGrid = () => {
 					<LocationDateText />
 				</LocationDateTextStyle>
 
-				<ApplyButton onClick={() => (window.location = 'https://apply.vandyhacks.org')}>
-					Apply
+				<ApplyButton
+					onClick={() => (window.location = 'https://vandyhacksvi.devpost.com/submissions')}
+				>
+					View Submissions
 				</ApplyButton>
 
-				<LogoGridStyle className="fadeIn">
+				<LogoGridStyle className='fadeIn'>
 					<Grid />
 				</LogoGridStyle>
 			</Container>
