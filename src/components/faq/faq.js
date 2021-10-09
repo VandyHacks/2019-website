@@ -181,6 +181,10 @@ const FAQText = [
 		question: 'Error 404: My question was not found!',
 		answer: "Send us an email at info@vandyhacks.org! We'll be happy to answer!",
 	},
+	{
+		question: "Hello! I'm from the future and need some guidance.",
+		answer: 'vh{what_is_p0pping}',
+	},
 ];
 
 const left = FAQText.filter((question, i) => !(i % 2));
